@@ -12,11 +12,11 @@ function Login(){
                         <input type="email" name="email" placeholder="E-mail"></input>
                     <div class="label"><label for="password">Password</label></div>
                         <input type="password" name="password" placeholder="Your Password"></input>
+                    <input type="submit" value="submit" />
                     <div class="noAcc">
                         <p class="para">Don't have an Account ? </p> 
                         <a href="#">Sign Up</a>
                     </div>
-                    <input type="submit" value="submit" />
                 </form>
             </div>
         </div>

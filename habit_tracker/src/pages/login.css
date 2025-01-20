@@ -1,23 +1,23 @@
 
+
 input[type="text"],[type="email"],[type="password"]{
   width: 100%;
-  padding: 18px 20px;
-  margin: 8px 0;
+  background-color: rgb(240, 235, 244);
+  padding: 18px 10px;
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
-  margin: 15px;
+  margin-top: 10px;
 }
 
 input[type="submit"]{
     width: 100%;
-  padding-top: 10px;
-  padding-bottom: 30px;
+    padding-bottom: 30px;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
-  margin: 15px;
+  margin-top: 10px;
 }
 .firstDiv{
     display: flex;
@@ -32,7 +32,7 @@ input[type="submit"]{
 
 .label{
     font-weight: 500;
-    margin-left: 16px;
+    margin-left: 4px;
     width: 200px;
     text-align: start;
     color: aliceblue;
