@@ -19,20 +19,19 @@ function SignUp() {
       setConfirmPassword("");
     }
     setloading(true);
-    console.log("submitting");
   }
 
   return (
     <div>
-      <h1> SignUp</h1>
-      <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Full Name" required value={FullName} onChange={(e) => setFullName(e.target.value)}></input><br />
-        <input type="text" placeholder="Username" value={Username} onChange={(e) => setUsername(e.target.value)}></input><br />
-        <input type="email" placeholder="E-mail" required value={email} onChange={(e) => setemail(e.target.value)}></input><br />
-        <input type="password" placeholder="Password" required value={password} onChange={(e) => setpassword(e.target.value)}></input><br />
-        <input type="password" placeholder="Confirm Password" required value={ConfirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}></input><br />
-        <button >Create Account</button>
-        <p>Already have an account? <a href="/login">Login</a></p>
+      <h1 className={styles.h1}> SignUp</h1>
+      <form onSubmit={handleSubmit} className={styles.form}>
+        <input className={styles.input} type="text" placeholder="Full Name" required value={FullName} onChange={(e) => setFullName(e.target.value)}></input><br />
+        <input className={styles.input} type="text" placeholder="Username" value={Username} onChange={(e) => setUsername(e.target.value)}></input><br />
+        <input className={styles.input} type="email" placeholder="E-mail" required value={email} onChange={(e) => setemail(e.target.value)}></input><br />
+        <input className={styles.input} type="password" placeholder="Password" required value={password} onChange={(e) => setpassword(e.target.value)}></input><br />
+        <input className={styles.input} type="password" placeholder="Confirm Password" required value={ConfirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}></input><br />
+        <button className={styles.button}>Create Account</button>
+        <p className={styles.p}>Already have an account? <a href="/login">Login</a></p>
       </form>
     </div>
   );
