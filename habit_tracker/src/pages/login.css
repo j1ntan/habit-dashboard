@@ -1,12 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300');
+
 *{
     margin: 0;
     padding: 0;
+    font-family: 'confortaa', sans-serif;
 }
 
 body{
+    background-color: aliceblue;
     justify-content: center;
     align-items: center;
 }
 
+.login{
+    border-radius: 50px;
+    box-shadow: 2px 2px 30px 2px rgb(64, 63, 63);
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    height: 80vh;
+    width: 25em;
+    background-color: rgb(20, 20, 19);
+}
+
+.login3{
+    display: flex;
+    justify-content: center;
+}
+.submit{
+    
+}
+
+h2{
+    font-size: large;
+}
+
+.noAccount{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    
+    background-color: transparent;
+}
+
+p{
+    margin-bottom: 10px;
+}
+
+h2{
+    margin-top: 20px;
+    font-size: 50px;
+}
+
+input{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 20em;
+    height: 2em;
+}
+
+.submit{
+    background-color: aliceblue;
+}
 
 
