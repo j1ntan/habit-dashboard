@@ -1,69 +1,46 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300');
 
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'confortaa', sans-serif;
+input[type="text"],[type="email"],[type="password"]{
+  width: 100%;
+  padding: 18px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  margin: 15px;
 }
 
-body{
-    background-color: aliceblue;
+input[type="submit"]{
+    width: 100%;
+  padding-top: 10px;
+  padding-bottom: 30px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  margin: 15px;
+}
+.firstDiv{
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .login{
-    border-radius: 50px;
-    box-shadow: 2px 2px 30px 2px rgb(64, 63, 63);
-    display: flex;
-    align-items: start;
-    justify-content: center;
-    height: 80vh;
-    width: 25em;
-    background-color: rgb(20, 20, 19);
+    width:50%;
+
 }
 
-.login3{
-    display: flex;
-    justify-content: center;
-}
-.submit{
-    
-}
+.label{
+    font-weight: 500;
+    margin-left: 16px;
+    width: 200px;
+    text-align: start;
+    color: aliceblue;
+    font-size: 20px;
 
-h2{
-    font-size: large;
-}
-
-.noAccount{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-button{
-    
-    background-color: transparent;
-}
-
-p{
-    margin-bottom: 10px;
-}
-
-h2{
-    margin-top: 20px;
-    font-size: 50px;
-}
-
-input{
-    margin-top: 20px;
-    margin-bottom: 20px;
-    width: 20em;
-    height: 2em;
-}
-
-.submit{
-    background-color: aliceblue;
 }
 
 
+input[type="submit"]:hover {
+    opacity: 0.8;
+  }
