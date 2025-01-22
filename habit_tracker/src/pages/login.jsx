@@ -15,8 +15,8 @@ function Login(){
                     <input type="submit" value="submit" />
                     <div class="noAcc">
                         <p class="para">Don't have an Account ? </p> 
-                        <a href="#">Sign Up</a>
-                    </div>
+                        <a href="./pages/SignUp.jsx">Sign Up</a>
+                    </div>                  
                 </form>
             </div>
         </div>
