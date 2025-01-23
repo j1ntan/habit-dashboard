@@ -1,1 +1,11 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+form{
+    background-color: black;
+}
 
+body{
+    background-color: azure;
+}

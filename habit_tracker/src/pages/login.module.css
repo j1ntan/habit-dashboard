@@ -1,25 +1,27 @@
-
-
-input[type="text"],[type="email"],[type="password"]{
+.input1{
   width: 100%;
   background-color: rgb(240, 235, 244);
   padding: 18px 10px;
   display: inline-block;
   border: 1px solid #ccc;
+  border-radius: 4px;
   box-sizing: border-box;
   margin-top: 10px;
 }
 
-input[type="submit"]{
+.input2{
     width: 100%;
     padding-bottom: 30px;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
+  border-radius: 4px;
   box-sizing: border-box;
+  cursor: pointer;
   margin-top: 10px;
 }
 .firstDiv{
+    background-color: aliceblue;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,7 +33,7 @@ input[type="submit"]{
 }
 
 .label{
-    font-weight: 500;
+    font-weight: 100px;
     margin-left: 4px;
     width: 200px;
     text-align: start;
@@ -47,6 +49,7 @@ input[type="submit"]{
 }
 
 a{
+    margin-top: 8px;
     text-decoration: none;
     color: #ccc;
 }
@@ -55,6 +58,14 @@ a{
     margin-right: 15px;
 }
 
-input[type="submit"]:hover {
+.input2:hover {
     opacity: 0.8;
   }
+
+form{
+    background-color: black;
+}
+
+body{
+    background-color: azure;
+}

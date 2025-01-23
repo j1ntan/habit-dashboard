@@ -1,0 +1,42 @@
+.divmain {
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    background-color: blanchedalmond;
+}
+
+.topbar {
+    height: 10%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logoname {
+    border: 1px solid black;
+}
+
+.bar {
+    border: 1px solid #000000;
+}
+
+.profile {
+    border: 1px solid black;
+}
+
+.bottombar {
+    height: 90%;
+    border: 1px solid black;
+    display: flex;
+}
+
+.leftbar {
+    width: 20%;
+    border: 1px solid black;
+}
+
+.rightbar {
+    width: 80%;
+    border: 1px solid black;
+}

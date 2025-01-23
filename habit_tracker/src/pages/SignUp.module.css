@@ -1,52 +1,65 @@
 body{
-    background-color: #f6f5f7;
+    background-color: #f7f4fa;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 form{
     text-align:center;
-    padding: 40px;
-    padding-top: 50px;
+    padding: 30px;
+    padding-top: 20px;
     margin: auto;
-    margin-top: 3px;
+    margin-top: 8px;
     width: 400px;
-    height: 400px;
-    background-color: rgb(23, 23, 23);
-    border-radius: 10px;
-    box-shadow: 4px 6px 8px 4px rgba(37, 37, 39, 0.5);
+    height:auto;
+    background-color: rgb(12, 12, 13);
+    border-radius: 4px;
+    box-shadow: 3px 4px 10px 10px rgba(35, 35, 35, 0.5);
 }
 h1{
     text-align: center;
-    margin-top: 20px;
+    margin-top: 8px;
     font-size: 50px;
 
 }
 input{
     background-color: rgb(255, 255, 255);
     font-size: 18px;
-    width: 320px;
-    height: 18px;
+    width: 100%;
+    height: 15px;
     margin-bottom: 24px;
-    padding: 12px;
-    border-radius: 6px;
+    padding: 10px 5px;
+    border-radius: 4px;
     border: 1px solid #ccc;
     box-shadow: 10px 10px 20px 
 }
+.label{
+    font-weight: 100px;
+    margin-left: 4px;
+    margin-bottom: 5px;
+    width: 200px;
+    text-align: start;
+    color: aliceblue;
+    font-size: 20px;
+}
+
 button{
-    font-size: 15px;
-    margin-top: 5px;
+    width: 100%;
+    font-size: 18px;
+    margin-left: 6px;
     padding: 25px;
     padding-top:10px;
     padding-bottom:10px;
-    border-radius: 20px;
+    margin-top: 5px;
+    border-radius: 4px;
     border: 1px solid #ccc;
     background-color: #f5f5f5;
     cursor: pointer;
     box-shadow: 10px 10px 20px rgb(0, 0, 0, 1);
 }
 button:hover{
-    background-color: #f5f5f5;
+    opacity: 0.8;
+    background-color: #cecaca;
     box-shadow: 10px 10px 20px rgb(0, 0, 0, 0.5);
 }
 button:active{
@@ -58,4 +71,3 @@ p{
     font-size: 15px;
     margin-top: 10px;
 }
-
