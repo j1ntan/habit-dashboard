@@ -32,9 +32,7 @@ function SignUp() {
 
   return (
     <div>
-      <h2 className={styles.h2}>*logo*</h2>
-      <h1 className={styles.h1}>WElCOME TO HABIT TRACKER</h1>
-      <h2 className={styles.h2}>Transform the way you prioritize your day</h2>
+      <h1 className={styles.h1}>Sign Up</h1>
       <form onSubmit={handleSubmit} className={styles.form}>
         <div className={styles.label}><label for="name">Name</label></div>
         < input className={styles.input} type="text" placeholder="Full Name" required value={FullName} onChange={(e) => setFullName(e.target.value)}></input><br />
@@ -47,6 +45,10 @@ function SignUp() {
         <div className={styles.label}><label for="confirm Password">Confirm Password</label></div>
           <input className={styles.input} type="password" placeholder="Confirm Password" required value={ConfirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}></input><br />
         <button className={styles.button}>Create Account</button>
+        <div className={styles.noAcc}>
+          <p className={styles.para}>Already have an Account ? </p> 
+          <a href="/">Login</a>
+        </div>
       </form>
     </div>
   );
