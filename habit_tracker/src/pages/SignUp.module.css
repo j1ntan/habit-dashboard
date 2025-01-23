@@ -7,11 +7,11 @@ body{
 form{
     text-align:center;
     padding: 40px;
-    padding-top: 50px;
+    padding-top: 30px;
     margin: auto;
     margin-top: 3px;
     width: 400px;
-    height: 400px;
+    height: 450px;
     background-color: rgb(25, 10, 92);
     border-radius: 10px;
     box-shadow: 25px 25px 15px rgb(4, 2, 109, 0.5);
@@ -53,8 +53,56 @@ button:active{
     background-color: rgb(255, 255, 255, 0.5);
     box-shadow: 10px 10px 20px rgb(0, 0, 0, 0.5);
 }
-p{
-    color: #f5f5f5;
-    font-size: 15px;
-    margin-top: 10px;
+h2{
+    text-align:center;
+}
+.signUp{
+    background-color: white;
+    height: 30px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius:20px;
+    margin-bottom: 15px;
+    padding-top:1.5px;
+    padding-bottom:1.5px;
+    width: 150px;
+    box-shadow: 10px 10px 20px rgb(0, 0, 0, 1);
+}
+.spansignUp{
+    background-color: white;
+    height: 30px;
+    border-radius : 20px;
+    border-color: black;
+    border-style: solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left:2px;
+    padding-right:2px;
+    border-width: 1.5px;;
+    width : 75px;
+
+}
+
+.spanlogin{
+    background-color: white;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:75px;
+    border-radius:20px;
+}
+.spansignUp:hover{
+    background-color: rgb(180, 181, 184,0.5);
+    cursor: pointer;
+}
+.spansignUp:active{
+    background-color: rgb(180, 181, 184, 1);
+}
+.spanlogin:hover{
+    background-color: rgb(180, 181, 184,0.5);
+    cursor: pointer;
 }

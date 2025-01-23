@@ -1,13 +1,12 @@
 import styles from './Dashboard.module.css';
+import Navbar from '../Navbar.jsx';
 
 function Dashboard() {
     return(
         <div className={styles.divmain} >
+
             <div className={styles.topbar}>
-                <div className={styles.logoname} >*name & logo*</div>
-                <div className={styles.bar} > bar</div>
-                <div className={styles.profile} >*profile*</div>
-               
+            <Navbar />
             </div>
             <div className={styles.bottombar}>
                 <div className={styles.leftbar}>

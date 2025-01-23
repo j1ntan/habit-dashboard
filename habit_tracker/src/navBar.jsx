@@ -1,5 +1,5 @@
 import React from "react"
-import Link from "next/link"
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const navStyle = {
@@ -45,21 +45,21 @@ const Navbar = () => {
     <nav style={navStyle}>
       <div style={logoStyle}>appName</div>
       <div style={navItemsStyle}>
-        <Link href="/dashboard" style={linkStyle}>
+        <Link to="/dashboard" style={linkStyle}>
           Dashboard
         </Link>
-        <Link href="/analytics" style={linkStyle}>
+        <Link to="/analytics" style={linkStyle}>
           Analytics
         </Link>
-        <Link href="/calendar" style={linkStyle}>
+        <Link to="/calendar" style={linkStyle}>
           Calendar
         </Link>
       </div>
       <div style={profileSectionStyle}>
-        <Link href="/profile" style={linkStyle}>
+        <Link to="/profile" style={linkStyle}>
           Profile
         </Link>
-        <button style={buttonStyle} onClick={() => alert("Logged out!")}>
+        <button style={buttonStyle} onClick={() => alert("Logged out!")} >
           Logout
         </button>
       </div>
