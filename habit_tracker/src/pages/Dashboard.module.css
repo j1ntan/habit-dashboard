@@ -7,22 +7,7 @@
 }
 
 .topbar {
-    height: 10%;
-    border: 1px solid black;
-    display: flex;
-    justify-content: space-between;
-}
-
-.logoname {
-    border: 1px solid black;
-}
-
-.bar {
-    border: 1px solid #000000;
-}
-
-.profile {
-    border: 1px solid black;
+    height: auto;
 }
 
 .bottombar {

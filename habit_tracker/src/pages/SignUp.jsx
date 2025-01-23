@@ -1,5 +1,6 @@
 import styles from './Signup.module.css';
 import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
 function SignUp() {
   const [email, setemail] = useState("");
@@ -9,6 +10,7 @@ function SignUp() {
   const [ConfirmPassword, setConfirmPassword] = useState("");
   const [error, seterror] = useState("");
   const [loading, setloading] = useState(false);
+  const navigate = useNavigate();
   
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,9 +23,18 @@ function SignUp() {
     setloading(true);
   }
 
+  const handleSignUpclick = () =>{
+    navigate('/signup');
+  }
+  const handleLoginclick = () =>{
+    navigate('/login');
+  }
+
   return (
     <div>
-      <h1 className={styles.h1}> SignUp</h1>
+      <h2 className={styles.h2}>*logo*</h2>
+      <h1 className={styles.h1}>WElCOME TO HABIT TRACKER</h1>
+      <h2 className={styles.h2}>Transform the way you prioritize your day</h2>
       <form onSubmit={handleSubmit} className={styles.form}>
         <div className={styles.label}><label for="name">Name</label></div>
         < input className={styles.input} type="text" placeholder="Full Name" required value={FullName} onChange={(e) => setFullName(e.target.value)}></input><br />
@@ -36,7 +47,6 @@ function SignUp() {
         <div className={styles.label}><label for="confirm Password">Confirm Password</label></div>
           <input className={styles.input} type="password" placeholder="Confirm Password" required value={ConfirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}></input><br />
         <button className={styles.button}>Create Account</button>
-        <p className={styles.p}>Already have an account? <a href="/login">Login</a></p>
       </form>
     </div>
   );
