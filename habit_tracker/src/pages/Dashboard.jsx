@@ -1,23 +1,11 @@
 import styles from './Dashboard.module.css';
-import Navbar from '../Navbar.jsx';
 
 function Dashboard() {
     return(
-        <div className={styles.divmain} >
-
-            <div className={styles.topbar}>
-            <Navbar />
-            </div>
-            <div className={styles.bottombar}>
-                <div className={styles.leftbar}>
-                
-                </div>
-                <div className={styles.rightbar}>
-
-                </div>
-
-            </div>
-        </div>
+        <>
+        <calendar/>
+        <p>hello</p>
+        </>
     )
 }
 
