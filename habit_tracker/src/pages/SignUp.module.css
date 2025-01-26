@@ -1,6 +1,8 @@
 body{
-    background-color: #a66af5;
+    background-color: rgb(240, 235, 244);
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 .form{
     text-align:center;
@@ -9,7 +11,7 @@ body{
     margin: auto;
     margin-top: 3px;
     width: 400px;
-    height: 430px;
+    height: 450px;
     background-color: rgb(25, 10, 92);
     border-radius: 10px;
     box-shadow: 25px 25px 15px rgb(4, 2, 109, 0.5);
@@ -80,7 +82,7 @@ body{
     justify-content: center;
     padding-left:2px;
     padding-right:2px;
-    border-width: 1.5px;;
+    border-width: 2px;;
     width : 75px;
 
 }
@@ -104,4 +106,7 @@ body{
 .spanlogin:hover{
     background-color: rgb(180, 181, 184,0.5);
     cursor: pointer;
+}
+.spanlogin:active{
+    background-color: rgb(180, 181, 184, 1);
 }

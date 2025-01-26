@@ -8,8 +8,6 @@ function SignUp() {
   const [FullName, setFullName] = useState("");
   const [Username, setUsername] = useState("");
   const [ConfirmPassword, setConfirmPassword] = useState("");
-  const [error, seterror] = useState("");
-  const [loading, setloading] = useState(false);
   const navigate = useNavigate();
   
   const handleSubmit = (e) => {

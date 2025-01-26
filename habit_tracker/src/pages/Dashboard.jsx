@@ -1,5 +1,5 @@
 import styles from './Dashboard.module.css';
-import Navbar from '../Navbar.jsx';
+import Navbar from '../navBar.jsx';
 
 function Dashboard() {
     return(

@@ -1,0 +1,17 @@
+.namelogo{
+    text-align: left;
+}
+.addahabit{
+    text-align: center;
+}
+.form{
+    display: flex;
+    justify-self: center;
+    width: 100%;
+}
+.type{
+    background-color: rgb(209, 207, 207);
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
