@@ -9,10 +9,10 @@ function SignUp() {
   const [Username, setUsername] = useState("");
   const [ConfirmPassword, setConfirmPassword] = useState("");
   const navigate = useNavigate();
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(password !== ConfirmPassword){
+    if (password !== ConfirmPassword) {
       seterror("Passwords do not match");
       alert("Passwords do not match");
       setpassword("");
@@ -21,10 +21,10 @@ function SignUp() {
     setloading(true);
   }
 
-  const handleSignUpclick = () =>{
+  const handleSignUpclick = () => {
     navigate('/signup');
   }
-  const handleLoginclick = () =>{
+  const handleLoginclick = () => {
     navigate('/login');
   }
 
@@ -34,7 +34,7 @@ function SignUp() {
       <h1 className={styles.h1}>WElCOME TO HABIT TRACKER</h1>
       <h2 className={styles.h2}>Transform the way you prioritize your day</h2>
       <form onSubmit={handleSubmit} className={styles.form}>
-        <div className={styles.signUp}> 
+        <div className={styles.signUp}>
           <span className={styles.spansignUp} onClick={handleSignUpclick}>Sign Up </span>
           <span className={styles.spanlogin} onClick={handleLoginclick}>Login</span>
         </div>

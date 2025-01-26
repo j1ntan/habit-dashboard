@@ -1,13 +1,20 @@
 import React from "react"
 import { Link } from "react-router-dom";
+import { MdAnalytics, MdHeight, MdWidthNormal } from "react-icons/md";
+
 
 const Navbar = () => {
   const navStyle = {
-    backgroundColor: "#f0f0f0",
+    color:"black",
+    backgroundColor: "white",
     padding: "10px",
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
+  }
+
+  const iconStyle ={
+    
   }
 
   const logoStyle = {
@@ -43,16 +50,20 @@ const Navbar = () => {
 
   return (
     <nav style={navStyle}>
-      <div style={logoStyle}>appName</div>
+      <div style={logoStyle}>Habit Tracker</div>
       <div style={navItemsStyle}>
         <Link to="/dashboard" style={linkStyle}>
           Dashboard
         </Link>
+        <MdAnalytics className="icons" style={iconStyle}/>
         <Link to="/analytics" style={linkStyle}>
           Analytics
         </Link>
         <Link to="/calendar" style={linkStyle}>
           Calendar
+        </Link>
+        <Link to="/habits" style={linkStyle}>
+          Habits
         </Link>
       </div>
       <div style={profileSectionStyle}>
