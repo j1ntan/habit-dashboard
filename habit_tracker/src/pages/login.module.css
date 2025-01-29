@@ -95,7 +95,7 @@ body{
     border-radius:20px;
     border-color: black;
     border-style: solid;
-    border-width: 2px;
+    border-width: 2.5px;
 }
 .spansignUp:hover{
     background-color: rgb(180, 181, 184,0.5);
