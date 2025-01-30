@@ -1,74 +1,156 @@
-import React, {useState, useEffect} from 'react';
-import styles from "./Calendar.module.css";
+import React, { useState } from "react";
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
 
-const Calendar = () => {
-    const[currentDate, setCurrentDate] = useState(new Date());
-    const[daysInMonth, setDaysInMonth] = useState([]);
-    const[startDay, setStartDay] = useState(0);
-    const[selectedDate, setSelectedDate] = useState(null);
+const App = () => {
+    const [selectedDate, setSelectedDate] = useState(null);
+    const [eventName, setEventName] = useState("");
+    const [events, setEvents] = useState([]);
 
-    useEffect(() => {
-        const year = currentDate.getFullYear();
-        const month = currentDate.getMonth();
-        const date = new Date(year, month, 1);
-        const days = [];
-
-        while(date.getMonth() === month) {
-            days.push(new Date(date));
-            date.setDate(date.getDate() + 1);
-        }
-
-        setDaysInMonth(days);
-        setStartDay(new Date(year, month, 1).getDay());
-
-    },[currentDate]);
-
-    const dayNames = ['MON','TUE','WED','THU','FRI','SAT','SUN'];
-
-    const prevMonth = () => {
-        setCurrentDate(new Date(currentDate.setMonth(currentDate.getMonth() - 1)));
-    }
-
-    const nextMonth = () => {
-        setCurrentDate(new Date(currentDate.setMonth(currentDate.getMonth() + 1)));
-    }
-
-    const handleDateClick = (date) =>{
+    const Date_Click_Fun = (date) => {
         setSelectedDate(date);
-    }
+    };
 
+    const Event_Data_Update = (event) => {
+        setEventName(event.target.value);
+    };
 
-  return (
-    <div className={styles.calendar}>
-        <div className={styles.header}>
-            <button onClick={prevMonth}>&lt</button>
-            <span>
-                {currentDate.toLocaleString('default',{month: 'long'})}{''}
-                {currentDate.getFullYear()}
-            </span>
-            <button onClick={nextMonth}>&gt</button>
-            </div>
-        <div className={styles.day-name}>
-            {dayNames.map((day) => (
-                <div key={day} className={styles.day-name}>
-                    {day}
+    const Create_Event_Fun = () => {
+        if (selectedDate && eventName) {
+            const newEvent = {
+                id: new Date().getTime(),
+                date: selectedDate,
+                title: eventName,
+            };
+            setEvents([...events, newEvent]);
+            setSelectedDate(null);
+            setEventName("");
+            setSelectedDate(newEvent.date);
+        }
+    };
+
+    const Update_Event_Fun = (eventId, newName) => {
+        const updated_Events = events.map((event) => {
+            if (event.id === eventId) {
+                return {
+                    ...event,
+                    title: newName,
+                };
+            }
+            return event;
+        });
+        setEvents(updated_Events);
+    };
+
+    const Delete_Event_Fun = (eventId) => {
+        const updated_Events = events.filter((event) => event.id !== eventId);
+        setEvents(updated_Events);
+    };
+
+    return (
+        <div className={Styles.App}>
+            <h1> GeeksforGeeks Calendar Application </h1>
+            <div className={Styles.container}>
+                <div className={Styles.calendarContainer}>
+                    <Calendar
+                        value={selectedDate}
+                        onClickDay={Date_Click_Fun}
+                        tileClassName={({ date }) =>
+                            selectedDate &&
+                            date.toDateString() === selectedDate.toDateString()
+                                ? "selected"
+                                : events.some(
+                                      (event) =>
+                                          event.date.toDateString() ===
+                                          date.toDateString(),
+                                  )
+                                ? "event-marked"
+                                : ""
+                        }
+                    />{" "}
                 </div>
-            ))}
+                <div className={styles.eventContainer}>
+                    {" "}
+                    {selectedDate && (
+                        <div className={styles.eventForm}>
+                            <h2> Create Event </h2>{" "}
+                            <p>
+                                {" "}
+                                Selected Date: {selectedDate.toDateString()}{" "}
+                            </p>{" "}
+                            <input
+                                type="text"
+                                placeholder="Event Name"
+                                value={eventName}
+                                onChange={Event_Data_Update}
+                            />{" "}
+                            <button
+                                className={styles.createBtn}
+                                onClick={Create_Event_Fun}
+                            >
+                                Click Here to Add Event{" "}
+                            </button>{" "}
+                        </div>
+                    )}
+                    {events.length > 0 && selectedDate && (
+                        <div className={styles.eventList}>
+                            <h2> My Created Event List </h2>{" "}
+                            <div className={styles.eventCards}>
+                                {" "}
+                                {events.map((event) =>
+                                    event.date.toDateString() ===
+                                    selectedDate.toDateString() ? (
+                                        <div
+                                            key={event.id}
+                                            className={styles.eventCard}
+                                        >
+                                            <div className={styles.eventCardHeader}>
+                                                <span className={styles.eventDate}>
+                                                    {" "}
+                                                    {event.date.toDateString()}{" "}
+                                                </span>{" "}
+                                                <div className={styles.eventActions}>
+                                                    <button
+                                                        className={updateBtn}
+                                                        onClick={() =>
+                                                            Update_Event_Fun(
+                                                                event.id,
+                                                                prompt(
+                                                                    "ENTER NEW TITLE",
+                                                                ),
+                                                            )
+                                                        }
+                                                    >
+                                                        Update Event{" "}
+                                                    </button>{" "}
+                                                    <button
+                                                        className={styles.deleteBtn}
+                                                        onClick={() =>
+                                                            Delete_Event_Fun(
+                                                                event.id,
+                                                            )
+                                                        }
+                                                    >
+                                                        Delete Event{" "}
+                                                    </button>{" "}
+                                                </div>{" "}
+                                            </div>{" "}
+                                            <div className={styles.eventCardBody}>
+                                                <p className={styles.eventTitle}>
+                                                    {" "}
+                                                    {event.title}{" "}
+                                                </p>{" "}
+                                            </div>{" "}
+                                        </div>
+                                    ) : null,
+                                )}{" "}
+                            </div>{" "}
+                        </div>
+                    )}{" "}
+                </div>{" "}
+            </div>{" "}
         </div>
-        <div className={styles.day}>
-            {Array.from({length: startDay}).map((_,index)=>(
-                <div key={index} className={styles.empty-day}></div>
-            ))}
-            
-            {daysInMonth.map((day) => (
-                <div key={day} className={`${styles.day} ${day.getDate() === new Date().getDate() && day.getMonth() === new Date().getMonth() ? styles.today : ''} ${selectedDate && day.toDateString() === selectedDate.toDateString() ? styles.selected : ''}`} onClick={() => handleDateClick(day)}>
-                    {day.getDate()}
-                </div>
-            ))}
-        </div>
+    );
+};
 
-    </div>
-  )
-}
-
-export default Calendar
+export default App;
