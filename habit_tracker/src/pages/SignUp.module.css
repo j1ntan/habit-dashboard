@@ -65,8 +65,8 @@ body{
     justify-content: center;
     border-radius:20px;
     margin-bottom: 15px;
-    padding-top:1.5px;
-    padding-bottom:1.5px;
+    padding-top:1px;
+    padding-bottom:1px;
     width: 150px;
     box-shadow: 10px 10px 20px rgb(0, 0, 0, 1);
     margin-bottom: 25px;
@@ -82,9 +82,8 @@ body{
     justify-content: center;
     padding-left:2px;
     padding-right:2px;
-    border-width: 2.5px;;
+    border-width: 2.8px;
     width : 75px;
-
 }
 
 .spanlogin{

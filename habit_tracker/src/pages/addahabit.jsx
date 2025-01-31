@@ -10,24 +10,23 @@ import other from './icons/language.svg';
 import leisure from './icons/Smile.svg';
 import food from './icons/tea-cup--herbal-cook-tea-tisane-cup-drink-cooking-nutrition-mug-food.svg';
 import background from './icons/background.svg';
-import { CiTextAlignCenter } from 'react-icons/ci';
+import {useNavigate} from 'react-router-dom';
+
 
 function Addahabit() {
     const [name, setname] = useState("");
-    const [color, setcolor] = useState("");
+    // const [color, setcolor] = useState("");
     const [recurring, setrecurring] = useState("Daily");
     const [type, settype] = useState("Positive");
     const [done, setdone] = useState(false);
     const [discription, setdiscription] = useState("");
-    const [cue, setcue] = useState("");
-    const [reward, setreward] = useState("");
-    const [craving, setcraving] = useState("");
     const [frequency, setfrequency] = useState("");
     const [day, setday] = useState("Monday");
     const [date, setdate] = useState("1");
     const [category, setcategory] = useState("");
     const [Quantity, setQuantity] = useState("");
-
+    
+const navigate = useNavigate();
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -35,6 +34,13 @@ function Addahabit() {
     console.log(category)
     const handleCategoryClick = (e) => {
         setcategory(e.currentTarget.dataset.value);
+    }
+    const handleAddClick = (e) => {
+        e.preventDefault();
+        navigate('/dashboard');
+    }
+    const handleCancelClick = (e) => {
+        navigate('/dashboard');
     }
 
 
@@ -86,6 +92,10 @@ function Addahabit() {
                                 }
                             </div>
                         </div>
+                    </div>
+                    <div className={styles.buttons}>
+                    <button className={styles.button} onClick={handleAddClick}>Add</button>
+                    <button className={styles.button} onClick={handleCancelClick}>Cancel</button>
                     </div>
                 </div>
                 <div className={styles.category}><div>Select a Category</div>

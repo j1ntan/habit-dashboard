@@ -89,16 +89,18 @@
     width: 25%;
     padding: 5px;
     border-top-right-radius: 15px;
-    border-bottom-right-radius : 15px;
+    border-bottom-right-radius: 15px;
 }
-.typerepeat{
+
+.typerepeat {
     display: flex;
     flex-direction: row;
     padding: 5px;
     margin: 5px;
     flex-wrap: wrap;
 }
-.form{
+
+.form {
     justify-self: center;
     width: 55%;
     display: flex;
@@ -106,33 +108,39 @@
     border-radius: 15px;
     min-width: 350px;
 }
-.nametyperepeat{
+
+.nametyperepeat {
     width: 75%;
     margin: 5px;
     padding: 5px;
 }
-.name{
-    width : 100%;
-    margin:5px;
+
+.name {
+    width: 100%;
+    margin: 5px;
     margin-top: 10px;
-    justify-self:center;
+    justify-self: center;
     text-align: center;
 }
-.inputname{
+
+.inputname {
     width: 60%;
     height: 25px;
     border-radius: 5px;
     border-style: none;
     padding: 5px;
 }
-.icondiv:hover{
+
+.icondiv:hover {
     cursor: pointer;
     opacity: 0.5;
 }
-.icondiv:active{
-    opacity:1;
+
+.icondiv:active {
+    opacity: 1;
 }
-.icondivclicked{
+
+.icondivclicked {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -140,14 +148,15 @@
     width: auto;
     border: 1px solid white;
     border-radius: 30px;
-    padding:2px;
+    padding: 2px;
 }
+
 .type {
     display: flex;
     gap: 10px;
     flex-direction: column;
     width: 200px;
-    margin:5px;
+    margin: 5px;
     padding: 5px;
 }
 
@@ -158,7 +167,8 @@
     display: 'flex';
     flex-Direction: 'column';
 }
-.inputtype{
+
+.inputtype {
     border-radius: 5px;
     border-style: none;
     height: 20px;
@@ -166,7 +176,8 @@
     margin: 2px;
     width: auto
 }
-.inputrepeat{
+
+.inputrepeat {
     border-radius: 5px;
     border-style: none;
     height: 20px;
@@ -174,6 +185,7 @@
     margin: 2px;
     width: auto
 }
+
 .repeat2 {
     background-color: white;
     border-radius: 7.5px;
@@ -181,4 +193,30 @@
     width: 230px;
     margin-top: 5px;
     margin-bottom: 5px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: auto;
+    margin: 5px;
+    padding: 5px;
+}
+.button{
+    height: 30px;
+    width: 60px;
+    border-radius: 5px;
+    background-color: white;
+    margin: 5px;
+    padding: 5px;
+    border-style: none;
+}
+.button:hover{
+    background-color:rgb(180, 181, 184, 1);
+    cursor: pointer;
+}
+.button:active{
+    background-color: white;
 }
