@@ -1,0 +1,35 @@
+.calendarDiv{
+    padding-top: 9px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.day{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+    font-weight: 600;
+    width: 35px;
+    height: 70px;
+    border-radius: 12px;
+    background-color: rgba(217, 217, 217, 1);
+}
+
+.dayWeek{
+    font-size: 15px;
+    padding-bottom: 10px;
+    font-weight: 700;
+}
+
+.dateWeek{
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.elementCal{
+    padding-top: 5px;
+    padding-left: auto;
+}

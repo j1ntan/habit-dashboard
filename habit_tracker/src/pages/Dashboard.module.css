@@ -1,27 +1,90 @@
 .divmain {
+    font-family: 'poppins', sans-serif;
     height: 100vh; 
     display: flex;
     flex-direction: column;
     border: 1px solid black;
-    background-color: blanchedalmond;
+    background-color: rgb(253, 251, 249);
 }
 
 .topbar {
     height: auto;
 }
 
-.bottombar {
-    height: 90%;
-    border: 1px solid black;
+.sideBar{
+    width: 350px;
+    height: 32em;
+    margin-left: 2em;
+    border-radius: 12px;
+    background-color: rgba(217, 217, 217, 1);
+    ;
+}
+
+.rightTopBarMain{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1em;
+    margin-right: 1em;
+}
+
+.rightTopBar{
+    background-color: white;
+    width: 58em;
+    height: 100px;
     display: flex;
 }
 
-.leftbar {
-    width: 20%;
-    border: 1px solid black;
+.date{
+    background-color: rgba(251, 251, 248, 0.941);
+    border-radius: 12px;
+    width: 20em;
+    height: 120px;
 }
 
-.rightbar {
-    width: 80%;
-    border: 1px solid black;
+.streak{
+    background-color: rgb(12, 12, 12);
+    border-radius: 12px;
+    width: 40em;
+    height: 120px;
+}
+
+.addHabitButton{
+    cursor: pointer;
+    background-color: rgb(12, 12, 12);
+    color: white;
+    border-radius: 12px;
+    width: 8em;
+    height: 2em;
+    margin-top: 1em;
+    margin-left: 2.3em;
+}
+
+.date h1{
+    color: rgb(19, 19, 19);
+    font-size: 3em;
+    margin-top: 0.2em;
+    margin-left: 0.8em;
+}
+
+.date h2{
+    color: rgb(39, 38, 38);
+    font-size: 2.2em;
+    margin-top: 0.2em;
+    margin-left: 1.14em;
+}
+
+.sideBarCalendar{
+    background-color: rgb(177, 177, 177);
+    width: 100%;
+    border-radius: 12px;
+    height: 90px;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(177, 177, 177);
+    border-radius: 12px;
 }

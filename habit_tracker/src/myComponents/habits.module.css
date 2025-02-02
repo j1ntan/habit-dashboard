@@ -1,0 +1,55 @@
+h1{
+    color: white;
+}
+
+.singleList{
+    display: flex;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    width: 17em;
+    background-color: white;
+}
+
+.categoryHabit{
+    color: rgb(150, 150, 150);
+    font-weight: 700;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.habit2{
+    background-color:rgba(217, 217, 217, 1);
+    ;
+    display: flex;
+    justify-content: center;
+}
+
+.iconDiv{
+    background-color: rgb(183, 187, 187);
+    display: flex;
+    margin-top: 10px;
+    margin-right: 12px;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 16px;
+}
+.icon{
+    width: 30px;
+}
+.checkBox{
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+.checkBoxInp{
+    width: 12px;
+    height: 12px;
+    border: 1.7px solid black;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
