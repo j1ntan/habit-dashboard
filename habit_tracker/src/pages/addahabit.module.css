@@ -1,11 +1,12 @@
 .addahabit {
     text-align: center;
+    color: black;
 }
 
 .form {
     justify-self: center;
     width: 400px;
-    height:400px;
+    height:auto;
     display: flex;
     flex-direction: column;
     background-color: #D9D9D9;

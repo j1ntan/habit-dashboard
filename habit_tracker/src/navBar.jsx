@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { MdAnalytics, MdHeight, MdWidthNormal } from "react-icons/md";
 import {useNavigate} from "react-router-dom";
 
-
 const Navbar = () => {
   const navigate= useNavigate();
   const navStyle = {
@@ -20,6 +19,7 @@ const Navbar = () => {
   }
 
   const logoStyle = {
+    marginLeft: "20px",
     fontSize: "24px",
     fontWeight: "bold",
   }
@@ -63,9 +63,6 @@ const Navbar = () => {
         </Link>
         <Link to="/calendar" style={linkStyle}>
           Calendar
-        </Link>
-        <Link to="/habits" style={linkStyle}>
-          Habits
         </Link>
       </div>
       <div style={profileSectionStyle}>

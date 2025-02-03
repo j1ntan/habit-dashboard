@@ -9,7 +9,7 @@ function SignUp() {
   const [FullName, setFullName] = useState("");
   const [Username, setUsername] = useState("");
   const [ConfirmPassword, setConfirmPassword] = useState("");
-  const [error, setError] = useState("");
+  const [Error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -19,19 +19,30 @@ function SignUp() {
       alert("Passwords do not match");
       setpassword("");
       setConfirmPassword("");
+      return;
     }
-    else {
-      const signUpData={email, password, Username, ConfirmPassword};
-      axios.post('http://localhost:8000/api/signup/', signUpData)
+
+    const signUpData = {
+      email: email,
+      password: password,
+      username: Username,
+      re_password: ConfirmPassword
+    };
+
+    axios.post('http://localhost:8000/api/auth/signup/', signUpData)
       .then(response => {
         console.log('Data posted successfully:', response.data);
-        navigate('./login');
+        navigate('/login'); 
       })
       .catch(error => {
         console.error('Error posting data:', error);
-        setError('Error signing up');
-      }); 
-    }
+        if (error.response) {
+          const errorMessage = Object.values(error.response.data)[0][0];
+          setError(errorMessage);
+        } else {
+          setError('Error signing up');
+        }
+      });
   }
 
   const handleSignUpclick = () => {
@@ -43,7 +54,7 @@ function SignUp() {
 
   return (
     <div>
-      <h2 className={styles.h2}>*logo*</h2>
+      <h2 className={styles.h2}>logo</h2>
       <h1 className={styles.h1}>WElCOME TO HABIT TRACKER</h1>
       <h2 className={styles.h2}>Transform the way you prioritize your day</h2>
       <form onSubmit={handleSubmit} className={styles.form}>
@@ -57,6 +68,7 @@ function SignUp() {
         <input className={styles.input} type="password" placeholder="Password" required value={password} onChange={(e) => setpassword(e.target.value)}></input><br />
         <input className={styles.input} type="password" placeholder="Confirm Password" required value={ConfirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}></input><br />
         <button className={styles.button}>Create Account</button>
+        {Error && <p className={styles.error}>{Error}</p>} 
       </form>
     </div>
   );

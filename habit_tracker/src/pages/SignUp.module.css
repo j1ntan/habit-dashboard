@@ -109,3 +109,7 @@ body{
 .spanlogin:active{
     background-color: rgb(180, 181, 184, 1);
 }
+.error{
+    color: white;
+    margin: 10px;
+}

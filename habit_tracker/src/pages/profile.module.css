@@ -1,0 +1,29 @@
+.subMenuWrap{
+    display: flex;
+    justify-content: end;
+    color: white;
+    margin-top: 30px;
+}
+.subMenu{
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    width: 220px;
+    height: 300px;
+    margin: 20px 40px;
+    background-color: black;
+}
+.hr{
+    border: 1px solid white;
+    height: 1px;
+    width: 100%;
+    background:#ccc;
+    margin-top: 3px;
+}
+
+.a{
+    margin: 10px;
+    text-decoration: none;
+    color: white;
+}
+
