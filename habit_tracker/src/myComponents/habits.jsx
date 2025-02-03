@@ -14,6 +14,7 @@ const habitList = [
     {name: "Go for a run", icon: sport, category: "Health"},
     {name: "Read a book", icon: leisure, category: "Leisure"},
     {name: "Eat a healthy meal", icon: food, category: "Health"},
+    {name: "hello", icon: sport, category: "sport"},
 ]
 
 const changeColor = (event) => {

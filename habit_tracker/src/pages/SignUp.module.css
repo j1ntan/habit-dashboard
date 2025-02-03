@@ -4,6 +4,11 @@ body{
     margin: 0;
     padding: 0;
 }
+.nav{
+    color: white;
+    background-color: black;
+    font-size: 23px;
+}
 .form{
     text-align:center;
     padding: 40px;
@@ -12,20 +17,21 @@ body{
     margin-top: 3px;
     width: 400px;
     height: 450px;
-    background-color: rgb(25, 10, 92);
+    background-color: rgb(11, 11, 11);
     border-radius: 10px;
-    box-shadow: 25px 25px 15px rgb(4, 2, 109, 0.5);
+    box-shadow: 5px 5px 15px 10px rgba(9, 9, 9, 0.5);
 }
 .h1{
+    color: #fca311;
     text-align: center;
     margin-top: 20px;
-    font-size: 50px;
+    font-size: 30px;
 
 }
 .input{
     background-color: rgb(255, 255, 255);
     font-size: 18px;
-    width: 320px;
+    width: 380px;
     height: 18px;
     margin-bottom: 24px;
     padding: 12px;

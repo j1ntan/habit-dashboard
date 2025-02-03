@@ -19,6 +19,11 @@
     margin-right: 1em;
 }
 
+.addaHabit a{
+    color: white;
+    text-decoration: none;
+}
+
 .topbar {
     height: auto;
 }
@@ -28,7 +33,7 @@
     height: 32em;
     margin-left: 2em;
     border-radius: 12px;
-    background-color: rgb(7, 7, 7);
+    background-color: rgba(217, 217, 217, 1);
     ;
 }
 
@@ -54,7 +59,7 @@
 }
 
 .streak{
-    background-color: rgb(12, 12, 12);
+    background-color: rgba(217, 217, 217, 1);
     border-radius: 12px;
     width: 40em;
     height: 120px;
@@ -74,19 +79,17 @@
 .date h1{
     color: rgb(19, 19, 19);
     font-size: 3em;
-    margin-top: 0.2em;
-    margin-left: 0.8em;
+    margin-left: 0.6em;
 }
 
 .date h2{
     color: rgb(39, 38, 38);
     font-size: 2.2em;
-    margin-top: 0.2em;
-    margin-left: 1.14em;
+    margin-left: 0.89em;
 }
 
 .sideBarCalendar{
-    background-color: rgb(9, 9, 9);
+    background-color: rgba(217, 217, 217, 1);
     width: 100%;
     border-radius: 12px;
     height: 90px;
@@ -99,4 +102,47 @@ ul{
     overflow: hidden;
     background-color: rgb(10, 10, 10);
     border-radius: 12px;
+}
+
+.rightBottomMain{
+    background-color: rgba(217, 217, 217, 1);
+    margin-top: 2.8em;
+    border-radius: 12px;
+    margin-left: 0.5em;
+    width: 57.6em;
+    height: 22.9em;
+}
+
+.header{
+    display: flex;
+    width: 100%;
+    height: 70px;
+    border-radius: 12px;
+}
+
+.headerLeft{
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+    height: 70px;
+    border-radius: 12px;
+    background-color: tomato;
+}
+
+.headerRight{
+    width: 60%;
+    height: 70px;
+    border-radius: 12px;
+    background-color: rgb(151, 149, 149);
+}
+.iconPre{
+    margin-top: 1.1em;
+    width: 2em;
+    height: 2em;
+}
+
+.iconNex{
+    margin-top: 1.1em;
+    width: 2em;
+    height: 2em;
 }

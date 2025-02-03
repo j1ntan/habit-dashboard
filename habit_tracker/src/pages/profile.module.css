@@ -1,29 +1,18 @@
-.subMenuWrap{
-    display: flex;
-    justify-content: end;
-    color: white;
-    margin-top: 30px;
+.profile{
+    width: 22em;
+    height: 30em;
+    background-color: rgb(249, 248, 248);
+    border-radius: 8px;
+    box-shadow: 5px 2px 30px 5px rgba(0, 0, 0, 0.2);
 }
-.subMenu{
+
+.main{
+    height: 100vh;
     display: flex;
     justify-content: center;
-    padding-top: 10px;
-    width: 220px;
-    height: 300px;
-    margin: 20px 40px;
-    background-color: black;
+    align-items: center;
 }
-hr{
-    border: 1px solid white;
-    height: 1px;
-    width: 100%;
-    background:#ccc;
-    margin-top: 3px;
+.profileDet{
+    background-color: tomato;
+    color: black;
 }
-
-a{
-    margin: 10px;
-    text-decoration: none;
-    color: white;
-}
-

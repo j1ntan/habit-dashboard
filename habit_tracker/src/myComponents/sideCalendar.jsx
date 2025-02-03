@@ -101,7 +101,7 @@ function getDayn1() {
     const today = new Date();
     const day = today.getDay();
     const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-    return days[day-1+7];
+    return days[day-1];
 }
 
 function getDay() {
