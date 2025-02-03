@@ -1,9 +1,11 @@
 import React from "react"
 import { Link } from "react-router-dom";
 import { MdAnalytics, MdHeight, MdWidthNormal } from "react-icons/md";
+import {useNavigate} from "react-router-dom";
 
 
 const Navbar = () => {
+  const navigate= useNavigate();
   const navStyle = {
     color:"black",
     backgroundColor: "white",
@@ -70,7 +72,7 @@ const Navbar = () => {
         <Link to="/profile" style={linkStyle}>
           Profile
         </Link>
-        <button style={buttonStyle} onClick={() => alert("Logged out!")} >
+        <button style={buttonStyle} onClick={() => navigate("../login")} >
           Logout
         </button>
       </div>

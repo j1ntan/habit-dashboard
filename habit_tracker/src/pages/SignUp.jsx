@@ -1,6 +1,7 @@
 import styles from './Signup.module.css';
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 function SignUp() {
   const [email, setemail] = useState("");
@@ -8,17 +9,29 @@ function SignUp() {
   const [FullName, setFullName] = useState("");
   const [Username, setUsername] = useState("");
   const [ConfirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (password !== ConfirmPassword) {
-      seterror("Passwords do not match");
+      setError("Passwords do not match");
       alert("Passwords do not match");
       setpassword("");
       setConfirmPassword("");
     }
-    setloading(true);
+    else {
+      const signUpData={email, password, Username, ConfirmPassword};
+      axios.post('http://localhost:8000/api/signup/', signUpData)
+      .then(response => {
+        console.log('Data posted successfully:', response.data);
+        navigate('./login');
+      })
+      .catch(error => {
+        console.error('Error posting data:', error);
+        setError('Error signing up');
+      }); 
+    }
   }
 
   const handleSignUpclick = () => {
