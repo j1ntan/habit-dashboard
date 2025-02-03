@@ -7,6 +7,18 @@
     background-color: rgb(253, 251, 249);
 }
 
+.hello{
+    color: rgb(12, 12, 12);
+    font-size: 2em;
+}   
+
+.addaHabit{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 2em;
+    margin-right: 1em;
+}
+
 .topbar {
     height: auto;
 }
@@ -16,7 +28,7 @@
     height: 32em;
     margin-left: 2em;
     border-radius: 12px;
-    background-color: rgba(217, 217, 217, 1);
+    background-color: rgb(7, 7, 7);
     ;
 }
 
@@ -35,7 +47,7 @@
 }
 
 .date{
-    background-color: rgba(251, 251, 248, 0.941);
+    background-color: rgba(249, 249, 248, 0.941);
     border-radius: 12px;
     width: 20em;
     height: 120px;
@@ -74,7 +86,7 @@
 }
 
 .sideBarCalendar{
-    background-color: rgb(177, 177, 177);
+    background-color: rgb(9, 9, 9);
     width: 100%;
     border-radius: 12px;
     height: 90px;
@@ -85,6 +97,6 @@ ul{
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: rgb(177, 177, 177);
+    background-color: rgb(10, 10, 10);
     border-radius: 12px;
 }
