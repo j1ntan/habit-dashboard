@@ -5,13 +5,13 @@ import Modal from '../component/modalAddaHabit.jsx'
 import Addahabit from './addahabit.jsx';
 import Profile from './profile.jsx';
 import Habits from '../MyComponents/habits.jsx';
-import SideCalendar from '../myComponents/sideCalendar.jsx';
+import SideCalendar from '../MyComponents/sideCalendar.jsx';
 import { FaBeer } from "react-icons/fa";
 import weekHabit from '../MyComponents/weekHabit.jsx';
 import { GrFormPrevious } from "react-icons/gr";
 import { GrFormNext } from "react-icons/gr";
 import WeekHabit from '../MyComponents/weekHabit.jsx';
-import CompleteWeekDate from '../myComponents/weekDate.jsx';
+import CompleteWeekDate from '../MyComponents/weekDate.jsx';
 
 const userName = "User";
 
@@ -74,7 +74,7 @@ function Dashboard() {
 
                     </div> */}
                     <div className={styles.weekbox}>
-                        
+
                     </div>
                 </div>
                 {/* <div className={styles.rightBottomMain}>

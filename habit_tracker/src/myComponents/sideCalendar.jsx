@@ -54,7 +54,7 @@ function SideCalendar() {
     return (
         <div>
             <div className={styles.dateshowingbar}>
-                <span> {selecteddate.getDate()}/{selecteddate.getMonth()}/{selecteddate.getFullYear()}</span>
+                <span> {selecteddate.getDate()}/{selecteddate.getMonth()+1}/{selecteddate.getFullYear()}</span>
             </div>
             <div className={styles.calendarDiv}>
                 <div><img src={leftarrow} alt="<-" className={styles.icon} onClick={handleleftarrowclick} /></div>

@@ -1,36 +1,40 @@
-.profile{
-    width: 22em;
-    height: 30em;
-    background-color: rgb(249, 248, 248);
-    border-radius: 8px;
-    box-shadow: 5px 2px 30px 5px rgba(0, 0, 0, 0.2);
+.profileContainer{
+    height:auto;
+    width:auto;
+    background-color: grey;
+    text-align: center;
 }
-
-.main{
-    height: 100vh;
+.textcontainer{
+    margin:5px;
+    font-size:20px;
+}
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
-    padding-top: 10px;
-    width: 220px;
-    height: 300px;
-    margin: 20px 40px;
-    background-color: black;
-}
-.hr{
-    border: 1px solid white;
-    height: 1px;
-    width: 100%;
-    background:#ccc;
-    margin-top: 3px;
-}
-
-.a{
-    margin: 10px;
-    text-decoration: none;
-    color: white;
     align-items: center;
-}
-.profileDet{
-    background-color: tomato;
-    color: black;
-}
+  }
+  
+  .modalContent {
+    background: #D9D9D9;
+    padding: 20px;
+    border-radius: 5px;
+    width: auto;
+    max-width: 500px;
+    position: relative;
+  }
+  
+  .closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
