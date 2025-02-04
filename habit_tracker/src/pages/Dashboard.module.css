@@ -104,6 +104,7 @@ ul{
     border-radius: 12px;
 }
 
+
 .rightBottomMain{
     background-color: rgba(217, 217, 217, 1);
     margin-top: 2.8em;
@@ -146,3 +147,8 @@ ul{
     width: 2em;
     height: 2em;
 }
+
+.weeklyDate{
+    margin-top: 0.7em;
+}
+

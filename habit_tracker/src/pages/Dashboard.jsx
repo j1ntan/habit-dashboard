@@ -9,17 +9,7 @@ import weekHabit from '../MyComponents/weekHabit.jsx';
 import { GrFormPrevious } from "react-icons/gr";
 import { GrFormNext } from "react-icons/gr";
 
-
 const userName = "User";
-
-function getDate() {
-    const today = new Date();
-    const month = today.getMonth() + 1;
-    const year = today.getFullYear();
-    const date = today.getDate();
-    return `${date}/${month}/${year}`;
-  }
-
 
 function getDay() {
     const today = new Date();
@@ -28,6 +18,13 @@ function getDay() {
     return days[day];
 }
 
+function getDate(){
+    const today = new Date();
+    const day = today.getDate();
+    const month = today.getMonth()+1;
+    const year = today.getFullYear();
+    return `${day}/${month}/${year}`
+}
 
 function Dashboard() {
     const [currentDate, setCurrentDate] = useState(getDate());
@@ -63,19 +60,20 @@ function Dashboard() {
                     </div>
                 </div>
 
-                <div className={styles.rightBottomMain}>
-                    <div className={styles.header}>
-                        <div className={styles.headerLeft}>
-                            <GrFormPrevious className={styles.iconPre}/>
-                            <h2>Date</h2>
-                            <GrFormNext className={styles.iconNex}/>
-                        </div>
-                        <div className={styles.headerRight}></div>
-                    </div>
-                    <div className={styles.bottomMain}>
-
-                    </div>
+            <div className={styles.rightBottomMain}>
+                <div className={styles.header}>
+                            <div className={styles.headerLeft}>
+                                    <GrFormPrevious className={styles.iconPre}/>
+                                    <h2 className={styles.weeklyDate}></h2>
+                                    <GrFormNext className={styles.iconNex}/>
+                            </div>
+                            <div className={styles.headerRight}>
+            
+                            </div>
                 </div>
+                <div className={styles.bottomMain}>
+                </div>
+            </div>
             </div>
             </div>
             
