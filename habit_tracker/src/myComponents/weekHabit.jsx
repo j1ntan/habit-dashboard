@@ -1,10 +1,23 @@
 import React from "react";
 import styles from './weekHabit.module.css';
 
-function weekHabit() {
+function WeekHabit() {
     return (
-        <h1>hello</h1>
+        <div className={styles.rightBottomMain}>
+            <div className={styles.header}>
+                <div className={styles.headerLeft}>
+                        {/* <GrFormPrevious className={styles.iconPre}/> */}
+                        <h2 className={styles.weeklyDate}>Date</h2>
+                        <GrFormNext className={styles.iconNex}/>
+                </div>
+                <div className={styles.headerRight}>
+
+                </div>
+            </div>
+            <div className={styles.bottomMain}>
+            </div>
+        </div>
     )
 }
 
-export default weekHabit
+export default WeekHabit

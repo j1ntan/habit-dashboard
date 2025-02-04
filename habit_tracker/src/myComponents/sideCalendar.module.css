@@ -1,46 +1,48 @@
 .calendarDiv{
-    padding-top: 9px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding:5px;
+    margin:5px;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content:space-evenly;
+    height: 50px;
 }
-
 .day{
-    cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 5px;
-    font-weight: 600;
-    width: 35px;
-    height: 70px;
-    border-radius: 12px;
-    background-color: rgb(255, 255, 255);
+    text-align:center;
+    align-items: stretch;
+    padding: 3px;
+    width: 30px;
+    height: 60px;
+    border-radius: 15px;
+    background-color: none;
 }
 .day:hover{
     cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 5px;
-    font-weight: 600;
-    width: 35px;
-    height: 70px;
-    border-radius: 12px;
-    background-color: rgb(180, 176, 176);
+    text-align:center;
+    align-items: stretch;
+    padding: 3px;
+    width: 30px;
+    height: 60px;
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255,0.5);
 }
 .selectedday{
     cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 5px;
-    font-weight: 600;
-    width: 35px;
-    height: 70px;
-    border-radius: 12px;
-    background-color: rgb(180, 176, 176);
+    text-align:center;
+    align-items: stretch;
+    padding: 3px;
+    width: 30px;
+    height: 60px;
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255);
 }
 
 .dayWeek{
@@ -52,4 +54,23 @@
 .dateWeek{
     font-size: 25px;
     font-weight: 500;
+}
+.dateshowingbar{
+    padding:3px;
+    margin: 3px;
+    font-size: medium;
+    height: 15px;
+}
+
+.icon{
+    margin:3px;
+    background-color: none;
+}
+.icon:hover{
+    background-color:rgb(180, 176, 176);
+    border-radius: 100px;
+}
+.icon:active{
+    background-color: rgb(145, 145, 145);
+    border-radius: 20px;
 }
