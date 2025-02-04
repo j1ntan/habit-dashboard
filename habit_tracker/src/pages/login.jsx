@@ -45,7 +45,7 @@ function Login() {
 
     return (
         <div>
-            <h2 className={styles.h2}>*logo*</h2>
+            <div className={styles.nav}><h2 className={styles.h2}>Habit Tracker</h2></div>
             <h1 className={styles.h1}>WElCOME TO HABIT TRACKER</h1>
             <h2 className={styles.h2}>Transform the way you prioritize your day</h2>
             <form onSubmit={handleSubmit} className={styles.form}>

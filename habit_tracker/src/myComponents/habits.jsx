@@ -14,6 +14,7 @@ const habitList = [
     {name: "Go for a run", icon: sport, category: "Health"},
     {name: "Read a book", icon: leisure, category: "Leisure"},
     {name: "Eat a healthy meal", icon: food, category: "Health"},
+    {name: "hello", icon: sport, category: "sport"},
 ]
 
 const changeColor = (event) => {
@@ -39,8 +40,7 @@ const habitList2 = habitList.map((habit) => {
                 </div>
                 <div className={styles.iconDiv}>
                     <img src={habit.icon} className={styles.icon} />
-                </div>
-                
+                </div>                
                 <div className={styles.text}>
                     <h3>{habit.name}</h3>
                     <h3 className={styles.categoryHabit}>{habit.category}</h3>

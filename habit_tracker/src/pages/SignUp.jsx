@@ -19,30 +19,24 @@ function SignUp() {
       alert("Passwords do not match");
       setpassword("");
       setConfirmPassword("");
-      return;
     }
-
-    const signUpData = {
-      email: email,
-      password: password,
-      username: Username,
-      re_password: ConfirmPassword
-    };
-
-    axios.post('http://localhost:8000/api/auth/signup/', signUpData)
+    else {
+      const signUpData={
+        email: email,
+        password: password,
+        username: Username,
+        retype_password: ConfirmPassword
+      };
+      axios.post('http://localhost:8000/api/auth/signup/', signUpData)
       .then(response => {
         console.log('Data posted successfully:', response.data);
-        navigate('/login'); 
+        navigate('./login');
       })
       .catch(error => {
         console.error('Error posting data:', error);
-        if (error.response) {
-          const errorMessage = Object.values(error.response.data)[0][0];
-          setError(errorMessage);
-        } else {
-          setError('Error signing up');
-        }
-      });
+        setError('Error signing up');
+      }); 
+    }
   }
 
   const handleSignUpclick = () => {
@@ -68,7 +62,6 @@ function SignUp() {
         <input className={styles.input} type="password" placeholder="Password" required value={password} onChange={(e) => setpassword(e.target.value)}></input><br />
         <input className={styles.input} type="password" placeholder="Confirm Password" required value={ConfirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}></input><br />
         <button className={styles.button}>Create Account</button>
-        {Error && <p className={styles.error}>{Error}</p>} 
       </form>
     </div>
   );
