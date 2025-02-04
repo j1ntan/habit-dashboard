@@ -11,10 +11,10 @@ import leisure from '../pages/icons/Smile.svg';
 import food from '../pages/icons/tea-cup--herbal-cook-tea-tisane-cup-drink-cooking-nutrition-mug-food.svg';
 
 const habitList = [
-    {name: "Go for a run", icon: sport, category: "Health"},
-    {name: "Read a book", icon: leisure, category: "Leisure"},
-    {name: "Eat a healthy meal", icon: food, category: "Health"},
-    {name: "hello", icon: sport, category: "sport"},
+    {name: "Go for a run", discription: "Health"},
+    {name: "Read a book", discription:  "Leisure"},
+    {name: "Eat a healthy meal", discription:  "Health"},
+    {name: "hello", discription: "sport"},
 ]
 
 const changeColor = (event) => {
@@ -37,13 +37,10 @@ const habitList2 = habitList.map((habit) => {
             <div className={styles.singleList}>
                 <div className={styles.checkBox}>
                         <input type="checkbox" className={styles.checkBoxInp} onClick={changeColor} />
-                </div>
-                <div className={styles.iconDiv}>
-                    <img src={habit.icon} className={styles.icon} />
-                </div>                
+                </div>            
                 <div className={styles.text}>
                     <h3>{habit.name}</h3>
-                    <h3 className={styles.categoryHabit}>{habit.category}</h3>
+                    <h3 className={styles.categoryHabit}>{habit.discription}</h3>
                 </div>
             </div>
     </div>

@@ -35,7 +35,7 @@ function SignUp() {
       .catch(error => {
         console.error('Error posting data:', error);
         setError('Error signing up');
-      }); 
+      });
     }
   }
 
