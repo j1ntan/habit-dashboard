@@ -1,15 +1,5 @@
 import React, { useState } from 'react'
 import styles from './Habits.module.css';
-import sport from '../pages/icons/directions_walk.svg';
-import finance from '../pages/icons/bag-rupee--bag-payment-cash-money-finance.svg';
-import work from '../pages/icons/bag-suitcase-1--product-business-briefcase.svg';
-import health from '../pages/icons/favorite.svg';
-import social from '../pages/icons/gmail_groups.svg';
-import outdoor from '../pages/icons/image.svg';
-import other from '../pages/icons/language.svg';
-import leisure from '../pages/icons/Smile.svg';
-import food from '../pages/icons/tea-cup--herbal-cook-tea-tisane-cup-drink-cooking-nutrition-mug-food.svg';
-
 const habitList = [
     { name: "Go for a run", discription: "Health", checked: false },
     { name: "Read a book", discription: "Leisure", checked: true },

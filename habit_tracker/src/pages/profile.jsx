@@ -13,17 +13,13 @@ const Profile = ({ show, onClose }) => {
   };
 
   return (
-    <div className={styles.modalOverlay}>
-      <div className={styles.modalContent}>
         <div className={styles.profileContainer}>
-          <button className={styles.closeButton} onClick={onClose}>X</button>
+          <button className={styles.closeButton} onClick={onClose}></button>
           <h1>Profile</h1>
           <p className={styles.textcontainer}>Name: {data.name}</p>
           <p className={styles.textcontainer}>Username: {data.userName}</p>
           <p className={styles.textcontainer}>Email: {data.email}</p>
         </div>
-      </div>
-    </div>
   );
 }
 

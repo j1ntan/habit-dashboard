@@ -1,8 +1,15 @@
-.main {}
+.main {
+    margin:5px;
+    padding:10px;
+    width:100%;
+    height:450px;
+}
 
 .topbar {
     display: flex;
-    width:auto;
+    width:100%;
+    min-width: 300px;
+    padding:3px;
 }
 
 .weekdaterange {
@@ -12,18 +19,25 @@
 
 .weekdate {
     display: flex;
+    font-size: 25px;
+    align-items:center;
+    justify-content: space-evenly;
+    width:30%;
+    margin:2px;
 }
 
 .progresscontainer {
     background-color: rgb(207, 207, 207);
-    width: 200px;
-    height: 15px;
+    width:100%;
+    min-width: 200px;
+    height: 12px;
     border-radius: 15px;
+    margin-top:5px;
 }
 
 .progressbar {
     background-color:black;
-    height:15px;
+    height:12px;
     border-radius :15px;
 }
 .progresstext {
@@ -32,7 +46,39 @@
 .progress{
     display:flex;
     flex-direction: column;
+    height:var(weekdate);
+    width:63%;
+    margin:2px;
+    margin-left:15px;
+    justify-content: center;
+    margin-right:15px;
 }
 .bottombar{
-    
+    overflow-y: scroll;
+    width:93.5%;
+    height:81%;
+    margin:1%;
+    padding:1%
+}
+.bottombar::-webkit-scrollbar {
+    width: 12px;
+}
+.bottombar::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 10px; 
+}
+.bottombar::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px; 
+}
+.bottombar::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.icon{
+
+}
+.hr{
+    width:96%;
+    align-self: center;
 }

@@ -62,7 +62,9 @@ const Navbar = () => {
 
   const [showprofile, setshowprofile] = useState(false);
       const handleOpenProfile = () => {
-          setshowprofile(true);
+        if(showprofile){setshowprofile(false);}
+        else {
+          setshowprofile(true);}
       };
   
       const handleCloseProfile = () => {
@@ -87,7 +89,7 @@ const Navbar = () => {
           Calendar
         </Link>
         <CgProfile className="icons" style={iconStyle} />
-        <span style={linkStyle} onClick={handleOpenProfile}>
+        <span style={{...linkStyle, cursor:"pointer", position:'relative'}} onClick={handleOpenProfile}>
           Profile
         </span>
         </div>

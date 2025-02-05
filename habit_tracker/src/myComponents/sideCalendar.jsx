@@ -68,7 +68,6 @@ function SideCalendar() {
                     </div>
                 ))}
                 <div><img src={rightarrow} alt="->" className={styles.icon} onClick={handlerightarrowclick} /></div>
-
             </div>
         </div>
     );

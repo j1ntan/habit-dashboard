@@ -51,15 +51,13 @@ function Week() {
         <div className={styles.main} >
             <div className={styles.topbar}>
                 <div className={styles.weekdate}>
-                    <div><img src={leftarrow} alt="<-" className={styles.icon} onClick={handleleftarrowclick} /></div>
-                    {extractdates()}
-                    <div><img src={rightarrow} alt="->" className={styles.icon} onClick={handlerightarrowclick} /></div>
+                    <img src={leftarrow} alt="<-" className={styles.icon} onClick={handleleftarrowclick} />
+                    <div className={styles.actualdate}>{extractdates()}</div>
+                    <img src={rightarrow} alt="->" className={styles.icon} onClick={handlerightarrowclick} />
                 </div>
-                <div>
                     <ProgressBar progress='50'/>
-                </div>
             </div>
-            <hr></hr>
+            <hr className={styles.hr}></hr>
             <div className={styles.bottombar}>
                 <Habitweekdisplay/>
             </div>
