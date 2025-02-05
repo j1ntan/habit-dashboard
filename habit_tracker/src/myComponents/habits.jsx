@@ -59,7 +59,6 @@ const habitList2 = habitList.map((habit) => {
         </div>
     </li>
 });
-
 function Habits() {
     return (
         <div className={styles.allhabitlistbox}>

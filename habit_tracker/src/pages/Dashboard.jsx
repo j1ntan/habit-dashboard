@@ -12,6 +12,7 @@ import { GrFormPrevious } from "react-icons/gr";
 import { GrFormNext } from "react-icons/gr";
 import WeekHabit from '../MyComponents/weekHabit.jsx';
 import CompleteWeekDate from '../MyComponents/weekDate.jsx';
+import Week from '../MyComponents/week.jsx'
 
 const userName = "User";
 
@@ -58,45 +59,17 @@ function Dashboard() {
                     <div className={styles.sideBarHabit}><Habits /></div>
                 </div>
                 <div className={styles.rightDiv}>
-                        {/* <div className={styles.rightTopBar}>
-                        <div className={styles.date}>
-                            <div className={styles.secDiv}>
-                                <h1>{currentDate}</h1>
-                                <h2>{getDay()}</h2>
-                            </div>
-                        </div>
-                        <div className={styles.streak}>
-                            <div className={styles.average}></div>
-                            <div className={styles.currStreak}></div>
-                            <div className={styles.bestHabit}></div>
-
-                        </div>
-
-                    </div> */}
+                    <div>Top bar</div>
                     <div className={styles.weekbox}>
-
+                        <Week/>
                     </div>
                 </div>
-                {/* <div className={styles.rightBottomMain}>
-                    <div className={styles.header}>
-                        <div className={styles.headerLeft}>
-                            <GrFormPrevious className={styles.iconPre} />
-                            <h2 className={styles.weeklyDate}></h2>
-                            <GrFormNext className={styles.iconNex} />
-                        </div>
-                        <div className={styles.headerRight}>
-
-                        </div>
-                    </div>
-                    <div className={styles.bottomMain}>
-                    </div>
-                </div> */}
+                </div>
+                <Modal show={showModal} onClose={handleCloseModal} >
+                    <Addahabit />
+                </Modal>
             </div>
-            <Modal show={showModal} onClose={handleCloseModal} >
-                <Addahabit />
-            </Modal>
-        </div>
-    )
+            )
 }
 
-export default Dashboard;
+            export default Dashboard;
