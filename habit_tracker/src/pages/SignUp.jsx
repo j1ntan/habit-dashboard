@@ -16,28 +16,28 @@ function SignUp() {
     e.preventDefault();
     if (password !== ConfirmPassword) {
       setError("Passwords do not match");
-      alert("Passwords do not match");
       setpassword("");
       setConfirmPassword("");
     }
-    else {
+    else{
       const signUpData={
+        first_name: FullName,
         email: email,
         password: password,
         username: Username,
         retype_password: ConfirmPassword
-      };
+      }
       axios.post('http://localhost:8000/api/auth/signup/', signUpData)
       .then(response => {
         console.log('Data posted successfully:', response.data);
-        navigate('./login');
+        navigate('/login');
       })
       .catch(error => {
+        const errorMessage = Object.values(error.response.data)[0][0];
         console.error('Error posting data:', error);
-        setError('Error signing up');
+        setError(error.response.data.error);
       });
-    }
-  }
+    }}
 
   const handleSignUpclick = () => {
     navigate('/signup');
@@ -62,9 +62,9 @@ function SignUp() {
         <input className={styles.input} type="password" placeholder="Password" required value={password} onChange={(e) => setpassword(e.target.value)}></input><br />
         <input className={styles.input} type="password" placeholder="Confirm Password" required value={ConfirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}></input><br />
         <button className={styles.button}>Create Account</button>
+        {Error && <p className={styles.error}>{Error}</p>}
       </form>
     </div>
   );
 }
-
 export default SignUp

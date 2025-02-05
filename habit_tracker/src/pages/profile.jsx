@@ -1,21 +1,26 @@
 import React from 'react';
 import styles from './profile.module.css';
 
-const Profile = () => {
+
+const Profile = ({ show, onClose }) => {
+  if (!show) {
+    return null;
+  }
+  const data = {
+    name: 'abc',
+    userName: 'abcd',
+    email: 'abcd@gmail.com'
+  };
+
   return (
-    <div className={styles.main}>
-      <div className={styles.profile}>
-        <div className={styles.profileDet}>
+    <div className={styles.modalOverlay}>
+      <div className={styles.modalContent}>
+        <div className={styles.profileContainer}>
+          <button className={styles.closeButton} onClick={onClose}>X</button>
           <h1>Profile</h1>
-        </div>
-        <hr></hr>
-        <div className={styles.profilePoints}>
-          <h2>Nitesh Patel</h2>
-          <h2>E-mail</h2>
-          <h2>Mobile-No.</h2>
-          <h2>Help</h2>
-          <h2>Settings</h2>
-          <h2>DashBoard</h2>
+          <p className={styles.textcontainer}>Name: {data.name}</p>
+          <p className={styles.textcontainer}>Username: {data.userName}</p>
+          <p className={styles.textcontainer}>Email: {data.email}</p>
         </div>
       </div>
     </div>

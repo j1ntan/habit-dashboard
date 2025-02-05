@@ -6,7 +6,7 @@ function WeekHabit() {
         <div className={styles.rightBottomMain}>
             <div className={styles.header}>
                 <div className={styles.headerLeft}>
-                        {/* <GrFormPrevious className={styles.iconPre}/> */}
+                        <GrFormPrevious className={styles.iconPre}/>
                         <h2 className={styles.weeklyDate}>Date</h2>
                         <GrFormNext className={styles.iconNex}/>
                 </div>

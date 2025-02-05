@@ -5,6 +5,8 @@ import {useNavigate} from "react-router-dom";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import { MdOutlineDashboard } from "react-icons/md";
+import Profile from './pages/profile.jsx';
+import {useState} from 'react';
 
 
 const Navbar = () => {
@@ -58,6 +60,15 @@ const Navbar = () => {
     fontSize: "16px",
   }
 
+  const [showprofile, setshowprofile] = useState(false);
+      const handleOpenProfile = () => {
+          setshowprofile(true);
+      };
+  
+      const handleCloseProfile = () => {
+          setshowprofile(false);
+      };
+
   return (
     <nav style={navStyle}>
       <div style={logoStyle}>Habit Tracker</div>
@@ -76,13 +87,14 @@ const Navbar = () => {
           Calendar
         </Link>
         <CgProfile className="icons" style={iconStyle} />
-        <Link to="/profile" style={linkStyle}>
+        <span style={linkStyle} onClick={handleOpenProfile}>
           Profile
-        </Link>
+        </span>
         </div>
         <button style={buttonStyle} onClick={() => navigate("../login")} >
           Logout
         </button>
+        <Profile show={showprofile} onClose={handleCloseProfile}></Profile>
       </div>
     </nav>
   )
