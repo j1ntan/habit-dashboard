@@ -5,7 +5,7 @@ import Modal from '../component/modalAddaHabit.jsx'
 import Addahabit from './addahabit.jsx';
 import Profile from './profile.jsx';
 import Habits from '../MyComponents/habits.jsx';
-import SideCalendar from '../myComponents/sideCalendar.jsx';
+import SideCalendar from '../MyComponents/sideCalendar.jsx';
 import { FaBeer } from "react-icons/fa";
 import weekHabit from '../MyComponents/weekHabit.jsx';
 import { GrFormPrevious } from "react-icons/gr";
@@ -45,53 +45,69 @@ function Dashboard() {
     return (
 
         <div className={styles.divmain} >
+            {/* navbar-start */}
             <div className={styles.topbar}>
                 <Navbar />
             </div>
+            {/* navbar - end */}
+
+
+            {/* hell user and addahabit btn bar - start */}
             <div className={styles.addaHabit}>
                 <h1 className={styles.hello}>Hello, {userName}</h1>
                 <button className={styles.addHabitButton} onClick={handleOpenModal}>Add a Habit</button>
             </div>
-            <div className={styles.rightTopBarMain}>
-                <div className={styles.sideBar}>
-                    <div className={styles.sideBarCalendar}><SideCalendar /></div>
-                    <div className={styles.sideBarHabit}><Habits /></div>
-                </div>
-                <div className={styles.rightDiv}>
-                        {/* <div className={styles.rightTopBar}>
-                        <div className={styles.date}>
-                            <div className={styles.secDiv}>
-                                <h1>{currentDate}</h1>
-                                <h2>{getDay()}</h2>
+            {/* end of that bar */}
+
+            <div className={styles.mainContent}>  
+            {/* sidebar - start */}
+            <div className={styles.sideBar}>
+                        <div className={styles.sideBarCalendar}><SideCalendar /></div>
+                        <div className={styles.sideBarHabit}><Habits /></div>
+            </div>
+            {/* sidebar - end */}
+
+            {/* right div -start */}
+            <div className={styles.rightDiv}>
+                            {/* right above bar- start */}
+                            <div className={styles.rightTopBar}>
+                                <div className={styles.date}>
+                                    <div className={styles.secDiv}>
+                                        <h1>{currentDate}</h1>
+                                        <h2>{getDay()}</h2>
+                                    </div>
+                                </div>
+                                <div className={styles.streak}>
+                                    <div className={styles.average}></div>
+                                    <div className={styles.currStreak}></div>
+                                    <div className={styles.bestHabit}></div>
+                                </div>
+                            </div> 
+                            {/* right above bar- end */}
+                    
+                    <div className={styles.rightBottomMain}>
+
+                        {/* it is the header of bootom right div. */}
+                        <div className={styles.header}>
+                            {/* below code is for week dates for analysis graph */}
+                            <div className={styles.headerLeft}>
+                                <GrFormPrevious className={styles.iconPre} />
+                                <h2 className={styles.weeklyDate}></h2>
+                                <GrFormNext className={styles.iconNex} />
+                            </div>
+
+                            <div className={styles.headerRight}>
                             </div>
                         </div>
-                        <div className={styles.streak}>
-                            <div className={styles.average}></div>
-                            <div className={styles.currStreak}></div>
-                            <div className={styles.bestHabit}></div>
 
-                        </div>
-
-                    </div> */}
-                    <div className={styles.weekbox}>
-                        
-                    </div>
-                </div>
-                {/* <div className={styles.rightBottomMain}>
-                    <div className={styles.header}>
-                        <div className={styles.headerLeft}>
-                            <GrFormPrevious className={styles.iconPre} />
-                            <h2 className={styles.weeklyDate}></h2>
-                            <GrFormNext className={styles.iconNex} />
-                        </div>
-                        <div className={styles.headerRight}>
-
+                        {/* this code below is for analysis of week. */}
+                        <div className={styles.bottomMain}>
                         </div>
                     </div>
-                    <div className={styles.bottomMain}>
-                    </div>
-                </div> */}
+            </div>            
+            {/* right div - end */}
             </div>
+            
             <Modal show={showModal} onClose={handleCloseModal} >
                 <Addahabit />
             </Modal>

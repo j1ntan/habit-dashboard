@@ -1,10 +1,14 @@
-.divmain {
+body {
     font-family: 'poppins', sans-serif;
     height: 100vh; 
     display: flex;
     flex-direction: column;
     border: 1px solid black;
     background-color: rgb(253, 251, 249);
+}
+
+.mainContent{
+    display: flex;
 }
 
 .hello{
@@ -44,15 +48,17 @@
 }
 
 .rightTopBar{
-    background-color: rgb(94, 0, 0);
+    background-color: rgb(253, 252, 252);
     width: 58em;
     height: 100px;
+    margin-bottom: 40px;
     display: flex;
 }
 
 .date{
     background-color: rgba(249, 249, 248, 0.941);
     border-radius: 12px;
+    margin-right: 20px;
     width: 20em;
     height: 120px;
 }
@@ -60,7 +66,7 @@
 .streak{
     background-color: rgba(217, 217, 217, 1);
     border-radius: 12px;
-    width: 40em;
+    width: 35em;
     height: 120px;
 }
 
@@ -105,12 +111,8 @@
 
 
 .rightBottomMain{
-    background-color: rgba(217, 217, 217, 1);
-    margin-top: 2.8em;
-    border-radius: 12px;
-    margin-left: 0.5em;
-    width: auto;
-    height: 22.9em;
+    background-color: rgb(253, 252, 252);
+    
 }
 
 .header{
@@ -130,7 +132,8 @@
 }
 
 .headerRight{
-    width: 60%;
+    width: 55%;
+    margin-left: 20px;
     height: 70px;
     border-radius: 12px;
     background-color: rgb(151, 149, 149);
@@ -157,8 +160,13 @@
     width:auto
 }
 .rightDiv{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    width:100%;
+    background-color: rgb(251, 251, 251);
+    padding-left: 20px;
+}
+
+.bottomMain{
+    background-color: black;
+    margin-top: 20px;
+    width: 97%;
+    height: 20em;
 }
