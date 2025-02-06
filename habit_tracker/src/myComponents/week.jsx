@@ -48,7 +48,7 @@ function Week() {
     };
 
     return (
-        <div className={styles.main} >
+        <div className={styles.main}>
             <div className={styles.topbar}>
                 <div className={styles.weekdate}>
                     <img src={leftarrow} alt="<-" className={styles.icon} onClick={handleleftarrowclick} />
@@ -58,6 +58,7 @@ function Week() {
                     <ProgressBar progress='50'/>
             </div>
             <hr className={styles.hr}></hr>
+            
             <div className={styles.bottombar}>
                 <Habitweekdisplay/>
             </div>

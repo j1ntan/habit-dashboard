@@ -5,7 +5,6 @@ import Modal from '../component/modalAddaHabit.jsx'
 import Addahabit from './addahabit.jsx';
 import Profile from './profile.jsx';
 import Habits from '../MyComponents/habits.jsx';
-import SideCalendar from '../MyComponents/sideCalendar.jsx';
 import { FaBeer } from "react-icons/fa";
 import { GrFormPrevious } from "react-icons/gr";
 import { GrFormNext } from "react-icons/gr";
@@ -52,7 +51,7 @@ function Dashboard() {
 
             {/* hell user and addahabit btn bar - start */}
             <div className={styles.addaHabit}>
-                <h1 className={styles.hello}>Hello, {userName}</h1>
+                <h1 className={styles.username}>Hello, {userName}</h1>
                 <button className={styles.addHabitButton} onClick={handleOpenModal}>Add a Habit</button>
             </div>
             {/* end of that bar */}
@@ -60,8 +59,7 @@ function Dashboard() {
             <div className={styles.mainContent}>
                 {/* sidebar - start */}
                 <div className={styles.sideBar}>
-                    <div className={styles.sideBarCalendar}><SideCalendar /></div>
-                    <div className={styles.sideBarHabit}><Habits /></div>
+                    <Habits/>
                 </div>
                 {/* sidebar - end */}
 
@@ -85,9 +83,7 @@ function Dashboard() {
 
                     <div className={styles.rightBottomMain}>
                         {/* this code below is for analysis of week. */}
-                        <div className={styles.weekbox}>
                             <Week />
-                        </div>
                     </div>
                 </div>
                 {/* right div - end */}
