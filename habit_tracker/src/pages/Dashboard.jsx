@@ -6,7 +6,6 @@ import Addahabit from './addahabit.jsx';
 import Profile from './profile.jsx';
 import Habits from '../MyComponents/habits.jsx';
 import SideCalendar from '../MyComponents/sideCalendar.jsx';
-import SideCalendar from '../MyComponents/sideCalendar.jsx';
 import { FaBeer } from "react-icons/fa";
 import weekHabit from '../MyComponents/weekHabit.jsx';
 import { GrFormPrevious } from "react-icons/gr";

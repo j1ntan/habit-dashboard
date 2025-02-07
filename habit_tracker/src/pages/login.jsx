@@ -2,6 +2,9 @@ import styles from './login.module.css'
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { CgProfile } from "react-icons/cg";
+import { IoKeyOutline } from "react-icons/io5";
+
 
 function Login() {
     const [username, setusername] = useState("");
@@ -44,23 +47,27 @@ function Login() {
     }
 
     return (
-        <div>
-            <div className={styles.nav}><h2 className={styles.h2}>Habit Tracker</h2></div>
-            <h1 className={styles.h1}>WElCOME TO HABIT TRACKER</h1>
-            <h2 className={styles.h2}>Transform the way you prioritize your day</h2>
+        <div className={styles.main}>
+            <div className={styles.header}>
+                <div className={styles.logo}></div>
+                <div className={styles.textHeader}>
+                        <h1 className={styles.h1}>HABIT</h1>
+                        <h2 className={styles.h2}>Transform the way you prioritize</h2>
+                </div>
+            </div>
             <form onSubmit={handleSubmit} className={styles.form}>
                 <div className={styles.login}>
                     <span className={styles.spansignUp} onClick={handleSignUpclick}>Sign Up </span>
                     <span className={styles.spanlogin} onClick={handleLoginclick}>Login</span>
                 </div>
-                <input className={styles.input} type="text" placeholder="Username" required value={username} onChange={(e) => {
+                <div className={styles.line}><CgProfile className={styles.icon}/><input className={styles.input} type="text" placeholder="Username" required value={username} onChange={(e) => {
                     setusername(e.target.value)
                     setError('')
-                }}></input><br />
-                <input className={styles.input} type="password" placeholder="Password" required value={password} onChange={(e) => {
+                }}></input></div><br />
+                <div className={styles.line}>< IoKeyOutline className={styles.icon}/><input className={styles.input} type="password" placeholder="Password" required value={password} onChange={(e) => {
                     setpassword(e.target.value)
                     setError('')
-                }}></input><br />
+                }}></input></div><br />
                 <button className={styles.button}>Login</button>
                 {Error && <p className={styles.error}>{Error}</p>}
             </form>
