@@ -2,7 +2,7 @@ body {
     font-family: 'poppins', sans-serif;
     display: flex;
     flex-direction: column;
-    background-color: rgba(16, 16, 16, 1);
+    background-color: Black;
 }
 .divmain{
     width:100vw;
@@ -11,13 +11,12 @@ body {
     flex-direction:column;
     min-width:800px;
     min-height:600px;
-    background-color: rgba(16, 16, 16, 1);
+    background-color: black;
 }
 .topbar {
-    height: 5%;
+    height:50px;
     width:100%;
     min-height:30px;
-    max-height:40px;
 }
 .addaHabit{
     display: flex;
@@ -33,9 +32,10 @@ body {
     display: flex;
     width:100%;
     flex: 1;
+    margin-top:10px;
 }
 .sideBar{
-    min-width:300px;
+    min-width:320px;
     max-width:400px;
     width:28%;
     height:90%;
@@ -72,16 +72,6 @@ body {
     color: white;
     font-size:28px;
     margin-left: 35px;
-}
-.addHabitButton{
-    cursor: pointer;
-    background-color: rgb(255, 255, 255);
-    color: black;
-    border-radius: 12px;
-    height:28px;
-    width:90px;
-    border: none;
-    margin-right: 20px;
 }
 .date{
     box-sizing: border-box;

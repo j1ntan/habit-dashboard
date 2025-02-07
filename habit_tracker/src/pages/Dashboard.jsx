@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
 import styles from './Dashboard.module.css';
-import Navbar from '../navBar.jsx';
-import Modal from '../component/modalAddaHabit.jsx'
-import Addahabit from './addahabit.jsx';
+import Navbar from '../MyComponents/navBar.jsx';
 import Profile from './profile.jsx';
-import Habits from '../MyComponents/habits.jsx';
+import Habits from '../myComponents/habits.jsx';
 import SideCalendar from '../MyComponents/sideCalendar.jsx';
 import { FaBeer } from "react-icons/fa";
 import { GrFormPrevious } from "react-icons/gr";
 import { GrFormNext } from "react-icons/gr";
 import Week from '../MyComponents/week.jsx'
+
 
 const userName = "User";
 
@@ -29,15 +28,7 @@ function getDate() {
 }
 
 function Dashboard() {
-    const [showModal, setShowModal] = useState(false);
-
-    const handleOpenModal = () => {
-        setShowModal(true);
-    };
-
-    const handleCloseModal = () => {
-        setShowModal(false);
-    };
+    
 
     const [currentDate, setCurrentDate] = useState(getDate());
     return (
@@ -45,18 +36,9 @@ function Dashboard() {
         <div className={styles.divmain} >
             {/* navbar-start */}
             <div className={styles.topbar}>
-                <Navbar />
+                <Navbar input="dashboard"/>
             </div>
             {/* navbar - end */}
-
-
-            {/* hell user and addahabit btn bar - start */}
-            <div className={styles.addaHabit}>
-                <h1 className={styles.username}>Hello, {userName}</h1>
-                <button className={styles.addHabitButton} onClick={handleOpenModal}>Add a Habit</button>
-            </div>
-            {/* end of that bar */}
-
             <div className={styles.mainContent}>
                 {/* sidebar - start */}
                 <div className={styles.sideBar}>
@@ -89,9 +71,7 @@ function Dashboard() {
                 </div>
                 {/* right div - end */}
             </div>
-            <Modal show={showModal} onClose={handleCloseModal} >
-                <Addahabit />
-            </Modal>
+            
         </div >
     );
 }

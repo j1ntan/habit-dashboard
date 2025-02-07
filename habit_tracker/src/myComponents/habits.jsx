@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import styles from './Habits.module.css';
 import leftarrow from '../pages/icons/reshot-icon-chevron-arrow-left-circle-XY6MSRE5DN.svg';
 import rightarrow from '../pages/icons/reshot-icon-chevron-arrow-right-circle-C23LFHP5TK.svg';
+import { AuthContext } from '../component/AuthContext';
+import { useContext } from 'react';
+import axios from 'axios';
 
 function Habits() {
     const todaydate = new Date();
@@ -9,6 +12,7 @@ function Habits() {
     const [selecteddate, setselecteddate] = useState(todaydate);
 
     const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    const { token } = useContext(AuthContext);
 
     function getDate(offset) {
         const newDate = new Date(middledate);
@@ -64,6 +68,7 @@ function Habits() {
         { name: "hello", discription: "sport", checked: true },
     ]
 
+
     const changeColor = (event) => {
         if (event.target.checked) {
             event.target.parentElement.parentElement.style.backgroundColor = "black";
@@ -83,8 +88,21 @@ function Habits() {
         }
         else return styles.singleList;
     }
-    const handleCheckClick = () => {
+    const Token = token.token;
+    const headers ={
+        'Content-Type': 'application/json',
+        'Authorization': `token ${Token}`,
+    };
+    axios.get('http://localhost:8000/api/habits/',{headers})
+      .then(response => {
+        console.log('Data fetched successfully:', response.data);
+      })
+      .catch(error => {
+        const errorMessage = Object.values(error.response.data)[0][0];
+        console.error('Error fetching data:', errorMessage);
+      });
 
+    const handleCheckClick = () => {
     }
     const habitList2 = habitList.map((habit) => {
         return <li>
@@ -115,32 +133,32 @@ function Habits() {
         <div className={styles.main} >
             <div className={styles.sideBarCalendar}>
                 <div className={styles.sometext}> Get caught up with your task</div>
-                    <div className={styles.calendarDiv}>
-                        <div><img src={leftarrow} alt="<-" className={styles.icon} onClick={handleleftarrowclick} /></div>
-                        {[0, 1, 2, 3, 4, 5, 6].map((index) => (
-                            <div
-                                className={getclass(index - 3)}
-                                onClick={() => handleDateClick(index - 3)}
-                            >
-                                <h3 className={styles.dayWeek}>{getDay(index - 3)}</h3>
-                                <h4 className={styles.dateWeek}>{getDate(index - 3)}</h4>
-                            </div>
-                        ))}
-                        <div><img src={rightarrow} alt="->" className={styles.icon} onClick={handlerightarrowclick} /></div>
-                    </div>
+                <div className={styles.calendarDiv}>
+                    <div><img src={leftarrow} alt="<-" className={styles.icon} onClick={handleleftarrowclick} /></div>
+                    {[0, 1, 2, 3, 4, 5, 6].map((index) => (
+                        <div
+                            className={getclass(index - 3)}
+                            onClick={() => handleDateClick(index - 3)}
+                        >
+                            <h3 className={styles.dayWeek}>{getDay(index - 3)}</h3>
+                            <h4 className={styles.dateWeek}>{getDate(index - 3)}</h4>
+                        </div>
+                    ))}
+                    <div><img src={rightarrow} alt="->" className={styles.icon} onClick={handlerightarrowclick} /></div>
+                </div>
             </div>
             <div className={styles.sideBarHabit}>
                 <div className={styles.habitlistbox}>
-                <div className={styles.allhabitlistbox}>
-                    <ul>
-                        {habitList2}
-                    </ul>
-                 </div> 
+                    <div className={styles.allhabitlistbox}>
+                        <ul>
+                            {habitList2}
+                        </ul>
+                    </div>
                 </div>
                 <ProgressBar progress='37' />
             </div>
         </div>
-    )
+    );
 }
 
 export default Habits;

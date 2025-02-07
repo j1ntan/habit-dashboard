@@ -4,13 +4,18 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { CgProfile } from "react-icons/cg";
 import { IoKeyOutline } from "react-icons/io5";
+import { AuthContext } from '../component/AuthContext';
+import { useContext } from 'react';
+
 
 
 function Login() {
     const [username, setusername] = useState("");
     const [password, setpassword] = useState("");
     const [Error, setError] = useState('');
+    const { setToken } = useContext(AuthContext);
     const navigate = useNavigate();
+    const { token } = useContext(AuthContext);
 
     const handleSubmit = (e) => {
         setError('');
@@ -18,6 +23,7 @@ function Login() {
         axios.post('http://localhost:8000/api/auth/login/', { username, password })
             .then(response => {
                 if (response.data.status) {
+                    setToken(response.data.data);
                     console.log('Login successful:', response.data);
                     navigate('/dashboard');
                 }
@@ -38,6 +44,7 @@ function Login() {
                 }
             });
     }
+    console.log(token);
 
     const handleSignUpclick = () => {
         navigate('/signup');
@@ -45,7 +52,6 @@ function Login() {
     const handleLoginclick = () => {
         navigate('/login');
     }
-
     return (
         <div className={styles.main}>
             <div className={styles.header}>

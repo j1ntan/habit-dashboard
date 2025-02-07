@@ -88,13 +88,13 @@ const Habitweekdisplay = () => {
                 <tbody>
                     <tr className={styles.row}>
                         <td></td><td></td>
-                        <td className={styles.tabledata}>Mon</td>
-                        <td className={styles.tabledata}>Tue</td>
-                        <td className={styles.tabledata}>Wed</td>
-                        <td className={styles.tabledata}>Thru</td>
-                        <td className={styles.tabledata}>Fri</td>
-                        <td className={styles.tabledata}>Sat</td>
-                        <td className={styles.tabledata}>Sun</td>
+                        <td className={styles.tabledata}><div className={styles.day}>Mon</div></td>
+                        <td className={styles.tabledata}><div className={styles.day}>Tue</div></td>
+                        <td className={styles.tabledata}><div className={styles.day}>Wed</div></td>
+                        <td className={styles.tabledata}><div className={styles.day}>Thu</div></td>
+                        <td className={styles.tabledata}><div className={styles.day}>Fri</div></td>
+                        <td className={styles.tabledata}><div className={styles.day}>Sat</div></td>
+                        <td className={styles.tabledata}><div className={styles.day}>Sun</div></td>
                     </tr>
                     {tablerows}
                 </tbody>
