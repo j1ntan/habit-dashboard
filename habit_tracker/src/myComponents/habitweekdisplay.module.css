@@ -1,0 +1,25 @@
+.icons {
+    height: 20px;
+    width: 20px;
+    margin-top:4px;
+}
+
+.table {
+    border-collapse: separate;
+    border-spacing: 40px 15px;
+}
+
+.divmain {
+    height:100%;
+    width:100%;
+}
+.tabledata{
+    height: 30px;
+    width: 30px;
+    border-radius: 5px;
+    text-align:center;
+    vertical-align: middle;
+}
+.name{
+    font-size: 20px;
+}

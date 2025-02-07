@@ -6,7 +6,7 @@ const NotFound = () => {
         <div style={{ textAlign: 'center', marginTop: '50px' }}>
             <h1>Page Not Found</h1>
             <p>Sorry, the page you are looking for does not exist.</p>
-            <Link to="http://localhost:5173/">Go to Home</Link>
+            <Link to="http://localhost:5173/login">Go to Login</Link>
         </div>
     );
 };

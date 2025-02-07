@@ -53,9 +53,9 @@ function SideCalendar() {
     }
     return (
         <div>
-            <div className={styles.dateshowingbar}>
+            {/* <div className={styles.dateshowingbar}>
                 <span> {selecteddate.getDate()}/{selecteddate.getMonth()+1}/{selecteddate.getFullYear()}</span>
-            </div>
+            </div> */}
             <div className={styles.calendarDiv}>
                 <div><img src={leftarrow} alt="<-" className={styles.icon} onClick={handleleftarrowclick} /></div>
                 {[0, 1, 2, 3, 4, 5, 6].map((index) => (
@@ -68,7 +68,6 @@ function SideCalendar() {
                     </div>
                 ))}
                 <div><img src={rightarrow} alt="->" className={styles.icon} onClick={handlerightarrowclick} /></div>
-
             </div>
         </div>
     );
