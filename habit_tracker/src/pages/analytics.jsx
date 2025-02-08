@@ -12,7 +12,7 @@ function Analytics(){
     return(
         <div className={styles.body}>
             <div className={styles.navbaar}>
-                <NavBar />
+                <NavBar input="analytics"/>
             </div>
 
             {/* this is the main conntent which is below the navbar. */}
