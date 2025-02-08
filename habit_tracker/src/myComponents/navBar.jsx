@@ -64,7 +64,7 @@ function NavBar(input) {
 
   return (
     <div className={styles.main}>
-      <div className={styles.logo}><img src={logo} alt="*logo*" className={styles.logo1}></img></div>
+      <div className={styles.logo}><img src={logo} alt="*logo*" className={styles.logo1}></img><span className={styles.webname}>Habit.</span></div>
       <div className={styles.middleboxstyle}>
       <div className={styles.toggle}>
         <div className={setClassdash()} onClick={handleDashBoardclick}><MdOutlineDashboard className={styles.iconDash}/>Dashboard</div>

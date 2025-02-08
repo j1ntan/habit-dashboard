@@ -75,7 +75,7 @@
     flex-direction:column;
 }
 .allhabitlistbox{
-    height:480px;
+    height:420px;
     overflow-y: scroll;
     box-sizing: border-box;
     width: 100%;
@@ -127,7 +127,7 @@
     width: 100%;
     height: 100%;
     background-color: rgba(43, 43, 43, 1);
-    border-radius:10px;
+    border-radius:20px;
 
 }
 .sideBarCalendar{
@@ -141,7 +141,7 @@
     flex-direction: column;
     width:100%;
     padding:5px;
-    flex:1;
+    height:78%;
     justify-content: space-between;
 }
 .calendarDiv{
@@ -222,4 +222,12 @@
     margin-left: 10px;
     padding:5px;
     padding-bottom: 0px;
+}
+@media screen and (min-height: 750px){
+    .allhabitlistbox{
+        height:520px;
+        overflow-y: scroll;
+        box-sizing: border-box;
+        width: 100%;
+    }
 }

@@ -3,7 +3,8 @@ import { useState } from 'react';
 import styles from './week.module.css'
 import leftarrow from '../pages/icons/reshot-icon-chevron-arrow-left-circle-XY6MSRE5DN.svg';
 import rightarrow from '../pages/icons/reshot-icon-chevron-arrow-right-circle-C23LFHP5TK.svg';
-import Habitweekdisplay from './habitweekdisplay.jsx';
+import cross from '../pages/icons/cross-svgrepo-com.svg';
+import dot from '../pages/icons/dot-svgrepo-com.svg';
 
 
 function Week() {
@@ -47,6 +48,108 @@ function Week() {
         );
     };
 
+   
+
+    const Habitweekdisplay = () => {
+        const data = [
+            [{ name: "Go for a run", type: "positive", checked: false, days: [1,3,4]},
+            { name: "Read a book", type: "negative", checked: true },
+            { name: "Go for a run", type: "positive", checked: true },
+            { name: "Read a book", type: "negative", checked: true },
+            { name: "Eat a healthy meal", type: "positive", checked: false }, { name: "Go for a run", type: "positive", checked: false },
+            { name: "Read a book", type: "negative", checked: true },
+            { name: "Eat a healthy meal", type: "positive", checked: false },
+            { name: "Eat a healthy meal", type: "positive", checked: false },],
+            [{ name: "Go for a run", type: "positive", checked: true },
+            { name: "Read a book", type: "negative", checked: true },
+            { name: "Go for a run", type: "positive", checked: true },
+            { name: "Read a book", type: "negative", checked: true },
+            { name: "Eat a healthy meal", type: "positive", checked: false }, { name: "Go for a run", type: "positive", checked: false },
+            { name: "Read a book", type: "negative", checked: false },
+            { name: "Eat a healthy meal", type: "positive", checked: false },
+            { name: "Eat a healthy meal", type: "positive", checked: false },],
+            [{ name: "Go for a run", type: "positive", checked: false },
+            { name: "Read a book", type: "negative", checked: true },
+            { name: "Go for a run", type: "positive", checked: true },
+            { name: "Read a book", type: "negative", checked: true },
+            { name: "Eat a healthy meal", type: "positive", checked: false }, { name: "Go for a run", type: "positive", checked: false },
+            { name: "Read a book", type: "negative", checked: false },
+            { name: "Eat a healthy meal", type: "positive", checked: false },
+            { name: "Eat a healthy meal", type: "positive", checked: false },],
+            [{ name: "Go for a run", type: "positive", checked: false },
+            { name: "Read a book", type: "negative", checked: true },
+            { name: "Go for a run", type: "positive", checked: true },
+            { name: "Read a book", type: "negative", checked: true },
+            { name: "Eat a healthy meal", type: "positive", checked: false }, { name: "Go for a run", type: "positive", checked: false },
+            { name: "Read a book", type: "negative", checked: true },
+            { name: "Eat a healthy meal", type: "positive", checked: true },
+            { name: "Eat a healthy meal", type: "positive", checked: false },],
+            [{ name: "Go for a run", type: "positive", checked: false },
+            { name: "Read a book", type: "negative", checked: true },
+            { name: "Go for a run", type: "positive", checked: false },
+            { name: "Read a book", type: "negative", checked: false },
+            { name: "Eat a healthy meal", type: "positive", checked: false }, { name: "Go for a run", type: "positive", checked: false },
+            { name: "Read a book", type: "negative", checked: true },
+            { name: "Eat a healthy meal", type: "positive", checked: true },
+            { name: "Eat a healthy meal", type: "positive", checked: false },],
+            [{ name: "Go for a run", type: "positive", checked: false },
+            { name: "Read a book", type: "negative", checked: true },
+            { name: "Go for a run", type: "positive", checked: false },
+            { name: "Read a book", type: "negative", checked: true },
+            { name: "Eat a healthy meal", type: "positive", checked: true }, { name: "Go for a run", type: "positive", checked: false },
+            { name: "Read a book", type: "negative", checked: true },
+            { name: "Eat a healthy meal", type: "positive", checked: false },
+            { name: "Eat a healthy meal", type: "positive", checked: false },],
+            [{ name: "Go for a run", type: "positive", checked: false },
+            { name: "Read a book", type: "negative", checked: false },
+            { name: "Go for a run", type: "positive", checked: false },
+            { name: "Read a book", type: "negative", checked: true },
+            { name: "Eat a healthy meal", type: "positive", checked: true }, { name: "Go for a run", type: "positive", checked: false },
+            { name: "Read a book", type: "negative", checked: true },
+            { name: "Eat a healthy meal", type: "positive", checked: false },
+            { name: "Eat a healthy meal", type: "positive", checked: false },]
+        ];
+
+        const length = data[0].length;
+        const arraynumber = [];
+        for (let i = 0; i < length; i++) {
+            arraynumber.push(i);
+        }
+
+        const tablerows = arraynumber.map((i) => {
+            return (
+                <tr key={i} className={styles.row}>
+                    <td className={styles.tabledata}>{data[0][i].type == "positive" ? <img src={dot} className={styles.icons}></img> : <img src={cross} className={styles.icons}></img>}</td>
+                    <td className={styles.name}>{data[0][i].name}</td>
+                    {data.map((day, dayIndex) => (
+                        <td key={dayIndex} className={styles.tabledata} style={day[i].checked ? { backgroundColor: 'black' } : { backgroundColor: 'white' }}>
+                        </td>
+                    ))}
+                </tr>
+            );
+        });
+
+        return (
+            <div className={styles.divmain}>
+                <table className={styles.table}>
+                    <tbody>
+                        <tr className={styles.row}>
+                            <td></td><td></td>
+                            <td className={styles.tabledata}><div className={styles.day}>Mon</div></td>
+                            <td className={styles.tabledata}><div className={styles.day}>Tue</div></td>
+                            <td className={styles.tabledata}><div className={styles.day}>Wed</div></td>
+                            <td className={styles.tabledata}><div className={styles.day}>Thu</div></td>
+                            <td className={styles.tabledata}><div className={styles.day}>Fri</div></td>
+                            <td className={styles.tabledata}><div className={styles.day}>Sat</div></td>
+                            <td className={styles.tabledata}><div className={styles.day}>Sun</div></td>
+                        </tr>
+                        {tablerows}
+                    </tbody>
+                </table>
+            </div>
+        );
+    };
+
     return (
         <div className={styles.main}>
             <div className={styles.topbar}>
@@ -55,12 +158,12 @@ function Week() {
                     <div className={styles.actualdate}>{extractdates()}</div>
                     <img src={rightarrow} alt="->" className={styles.icon} onClick={handlerightarrowclick} />
                 </div>
-                    <ProgressBar progress='50'/>
+                <ProgressBar progress='50' />
             </div>
             <hr className={styles.hr}></hr>
-            
+
             <div className={styles.bottombar}>
-                <Habitweekdisplay/>
+                <Habitweekdisplay />
             </div>
         </div>
     );

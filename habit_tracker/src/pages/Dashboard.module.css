@@ -33,33 +33,55 @@ body {
     width:100%;
     flex: 1;
     margin-top:10px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    white-space: nowrap;
 }
 .sideBar{
     min-width:320px;
     max-width:400px;
     width:28%;
-    height:90%;
-    border-radius: 12px;
+    height:91%;
     display:flex;
     flex-direction: column;
     margin:20px;
+    margin-top:40px;
+    margin-left:30px;
 }
 .rightDiv{
     display:flex;
     flex-direction: column;
-    height:90%;
+    height:95%;
     flex : 1;
     margin:10px;
-    margin-right:20px;
+    margin-top: 25px;
+    margin-right:0px;
+    width:100%;
+    overflow-x: scroll;
+    white-space: nowrap;
 }
+.rightDiv::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.rightDiv {
+    scrollbar-width: none; /* Firefox */
+}
+
+/* Hide scrollbar for IE, Edge */
+.rightDiv {
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
 .rightTopBar{
-    width: 96%;
+    width: 900px;
     height: 18%;
     display: flex;
     margin:15px;
 }
 .rightBottomMain{
-    width:96%;
+    width:900px;
     height: 78%;
     border-radius:10px;
     display:flex;

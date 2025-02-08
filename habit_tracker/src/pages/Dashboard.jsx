@@ -63,7 +63,6 @@ function Dashboard() {
                         </div>
                     </div>
                     {/* right above bar- end */}
-
                     <div className={styles.rightBottomMain}>
                         {/* this code below is for analysis of week. */}
                             <Week />
