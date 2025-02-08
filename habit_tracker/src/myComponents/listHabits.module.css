@@ -61,3 +61,15 @@
     border-radius: 12px;
 }
 
+.text2{
+    display: flex;
+    justify-content: space-between;
+}
+
+.timeDate{
+    display: flex;
+}
+
+#days{
+    margin-right: 1.5px;
+}

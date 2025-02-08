@@ -1,6 +1,23 @@
+.main{
+    color: white;
+    background-color: #2B2B2B;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+}
+
 .addahabit {
+    background-color: #aa7cfb;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    font-weight: 400;
     text-align: center;
-    color: black;
+    width: 70%;
+    border-radius: 24px;
+    color: white;
 }
 
 .form {
@@ -9,8 +26,8 @@
     height:auto;
     display: flex;
     flex-direction: column;
-    background-color: #D9D9D9;
-    border-radius: 15px;
+    background-color: #2B2B2B;
+    border-radius: 24px;
 }
 
 .name {
@@ -19,9 +36,11 @@
 }
 
 .inputname {
+    font-size: 17px;
+    
     width: 270px;
     height: 25px;
-    border-radius: 5px;
+    border-radius: 24px;
     border-style: none;
     padding: 5px;
 }
@@ -46,7 +65,10 @@
 }
 
 .inputQuantity {
-    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    border-radius: 24px;
     border-style: none;
     height: 20px;
     padding: 3px;
@@ -60,7 +82,7 @@
     resize: none;
     padding: 10px;
     border-style: none;
-    border-radius: 5px;
+    border-radius: 24px;
 }
 
 .type {
@@ -74,6 +96,7 @@
 }
 
 .repeatContainer {
+    color:white;
     display: flex;
     align-items: center;
     margin: 5px;
@@ -87,12 +110,13 @@
 }
 
 .repeatOptions {
+    color: black;
     display: flex;
     align-items: center;
     background-color: white;
-    border-radius: 7.5px;
+    border-radius: 24px;
     padding: 5px;
-    width: 210px;
+    width: 65%;
     margin-top: 5px;
     margin-bottom: 5px;
 }
@@ -125,17 +149,17 @@
 }
 
 .daily:hover {
-    background-color: rgb(180, 181, 184, 0.5);
+    background-color: #e96544;
     cursor: pointer;
 }
 
 .weekly:hover {
-    background-color: rgb(180, 181, 184, 0.5);
+    background-color:#e96544;
     cursor: pointer;
 }
 
 .monthly:hover {
-    background-color: rgb(180, 181, 184, 0.5);
+    background-color: #e96544;
     cursor: pointer;
 }
 
@@ -146,7 +170,8 @@
     padding: 3px;
     padding-left: 6px;
     padding-right: 6px;
-    background: rgba(129, 129, 129, 0.5);
+    color: white;
+    background: #ec5029;
 }
 
 .active:hover{
@@ -161,6 +186,7 @@
     gap: 10px;
 
 }
+
 .dates{
     display: flex;
     margin: 10px;
@@ -184,7 +210,7 @@
     height: 30px;
     width: 60px;
     border-radius: 5px;
-    background-color: white;
+    background-color: #abf326;
     margin: 5px;
     padding: 5px;
     border-style: none;
@@ -206,4 +232,19 @@
     font-size: 15px;
     width: 120px;
     height: 25px;
+}
+
+.descriptionBox::-webkit-scrollbar {
+    width: 5px;
+}
+.descriptionBox::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 10px; 
+}
+.descriptionBox::-webkit-scrollbar-thumb {
+    background: #919090;
+    border-radius: 10px; 
+}
+.descriptionBox::-webkit-scrollbar-thumb:hover {
+    background: #747373;
 }

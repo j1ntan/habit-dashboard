@@ -30,9 +30,9 @@ function HabitGraph(){
     return(
         <ResponsiveContainer width="100%" height="100%">
             <div className={styles.habitGraph}>
-                <h2>Line chart</h2>
+                <h2 className={styles.headText}>Completion rates</h2>
 
-                <Chart type='line' width={940} height={230} series={product}
+                <Chart type='line' height={230} series={product}
 
                 options={{
                     xaxis:{

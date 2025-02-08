@@ -28,10 +28,10 @@ function Addahabit() {
 
 
     return (
-        <div>
-            <h1 className={styles.addahabit}>Add a habit</h1>
+        <div className={styles.main}>
+            <div className={styles.header}> <h1 className={styles.addahabit}>Add new habit</h1></div>
             <form onSubmit={handleSubmit} className={styles.form}>
-            <div className={styles.name}><input type="text" placeholder="Name of Habit" value={name} onChange={(e) => setname(e.target.value)} className={styles.inputname}></input></div>
+            <div className={styles.name}><input type="text" placeholder="Name" value={name} onChange={(e) => setname(e.target.value)} className={styles.inputname}></input></div>
             <div className={styles.type}><span><input type="radio" id="Positive" name="category" value="Positive" onChange={(e) => settype(e.target.value)}></input>
                 <label htmlFor="Positive">Positive</label></span>
                 <span><input type="radio" id="Negative" name="category" value="Negative" onChange={(e) => settype(e.target.value)}></input>

@@ -87,30 +87,6 @@ const Navbar = () => {
     <nav style={navStyle}>
       <div style={logoStyle}>Habit Tracker</div>
       <div style={navItemsStyle}>
-<<<<<<< HEAD
-          <div style={profileSectionStyle}>
-            <MdOutlineDashboard className="icons" style={iconStyle} />
-            <Link to="/dashboard" style={linkStyle}>
-              Dashboard
-            </Link>
-            <MdAnalytics className="icons" style={iconStyle}/>
-            <Link to="/analytics" style={linkStyle}>
-              Analytics
-            </Link>
-            <FaRegCalendarAlt className="icons" style={iconStyle} />
-            <Link to="/calendar" style={linkStyle}>
-              Calendar
-            </Link>
-            <CgProfile className="icons" style={iconStyle} />
-            <span style={linkStyle} onClick={handleOpenProfile}>
-              Profile
-            </span>
-          </div>
-          <button style={buttonStyle} onClick={() => navigate("../login")} >
-            Logout
-          </button>
-          <Profile show={showprofile} onClose={handleCloseProfile}></Profile>
-=======
         <div style={profileSectionStyle}>
           <Link to="/dashboard" style={linkStyle}>
             <MdOutlineDashboard className="icons" style={iconStyle} />
@@ -134,7 +110,6 @@ const Navbar = () => {
           Logout
         </button>
         <Profile show={showprofile} onClose={handleCloseProfile}></Profile>
->>>>>>> d6867df435e37fb82b0fc816877a9e1f37eea77b
       </div>
     </nav>
   )
