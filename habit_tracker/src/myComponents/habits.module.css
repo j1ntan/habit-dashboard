@@ -10,7 +10,7 @@
     width: 17em;
     background-color: white;
     align-items: center;
-    justify-content: left;
+    justify-content: space-between;
 }
 .singleList:hover{
     cursor:pointer;
@@ -22,7 +22,7 @@
     border-radius: 25px;
     width: 17em;
     align-items: center;
-    justify-content: left;
+    justify-content: space-between;
     background-color: black;
     color: white;
 }
@@ -41,6 +41,7 @@
     justify-content: center;
     align-items: center;
     padding: 4px;
+    position: relative;
 }
 
 .iconDiv{
@@ -230,4 +231,31 @@
         box-sizing: border-box;
         width: 100%;
     }
+}
+.menuIcon {
+    cursor: pointer;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.menu {
+    position: absolute;
+    top: -5px;
+    right: 2px;
+    
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 1000;
+    color:black;
+}
+
+.menuItem {
+    padding:3px;
+    cursor: pointer;
+    background: rgb(207, 55, 55);
+    border-radius: 5px;
+}
+
+.menuItem:hover {
+    background: rgb(207, 55, 55 ,0.7);
 }

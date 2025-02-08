@@ -1,8 +1,7 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import styles from './addahabit.module.css';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../component/AuthContext';
-import { useContext } from 'react';
 import axios from 'axios';
 
 function Addahabit() {
@@ -25,18 +24,17 @@ function Addahabit() {
     const [Sunday, setSunday] = useState(false);
     const { token } = useContext(AuthContext);
 
-
     const Days = [Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday];
-    const dayinnumber = []
+    const dayinnumber = [];
 
-    for (let i = 1; i <= 7; i++) {
+    for (let i = 0; i < 7; i++) {
         if (Days[i]) {
-            dayinnumber.push(i);
+            dayinnumber.push(i + 1);
         }
     }
 
     const navigate = useNavigate();
-    const Token=token.token;
+    const Token = token.token;
 
     const handleAddClick = (e) => {
         e.preventDefault();
@@ -48,7 +46,7 @@ function Addahabit() {
             good_habit: type,
             goal: goal,
             days: dayinnumber,
-        }
+        };
         const headers = {
             'Content-Type': 'application/json',
             'Authorization': `token ${Token}`,
@@ -56,17 +54,36 @@ function Addahabit() {
         axios.post('http://localhost:8000/api/habits/create', addahabit, { headers })
             .then(response => {
                 console.log('Data posted successfully:', response.data);
+                navigate('/dashboard');
             })
             .catch(error => {
                 const errorMessage = Object.values(error.response.data)[0][0];
-                console.error('Error posting data:', error);
+                console.error('Error posting data:', errorMessage);
                 setError(error.response.data.error);
             });
-    }
-    const handleCancelClick = (e) => {
-        navigate('/dashboard');
-    }
-    console.log(Token)
+    };
+
+    const handleRecurringClick = (type) => {
+        setrecurring(type);
+        if (type === "Daily") {
+            setMonday(true);
+            setTuesday(true);
+            setWednesday(true);
+            setThursday(true);
+            setFriday(true);
+            setSaturday(true);
+            setSunday(true);
+        } else {
+            setMonday(false);
+            setTuesday(false);
+            setWednesday(false);
+            setThursday(false);
+            setFriday(false);
+            setSaturday(false);
+            setSunday(false);
+        }
+    };
+
     return (
         <div className={styles.container}>
             <div className={styles.tmp}><h1 className={styles.addahabit}>Add a habit</h1></div>
@@ -98,8 +115,10 @@ function Addahabit() {
                 <div className={styles.repeatContainer}>
                     <div className={styles.repeatLabel}> Repeat : </div>
                     <div className={styles.repeatOptions}>
-                        <span onClick={() => setrecurring("Daily")} className={recurring === "Daily" ? styles.active : styles.daily}>Daily </span>
-                        | <span onClick={() => setrecurring("Weekly")} className={recurring === "Weekly" ? styles.active : styles.weekly}>Weekly </span></div><div className={styles.dayscontainer}>
+                        <span onClick={() => handleRecurringClick("Daily")} className={recurring === "Daily" ? styles.active : styles.daily}>Daily </span>
+                        | <span onClick={() => handleRecurringClick("Weekly")} className={recurring === "Weekly" ? styles.active : styles.weekly}>Weekly </span>
+                    </div>
+                    <div className={styles.dayscontainer}>
                         {recurring === "Weekly" && (
                             <div className={styles.weeklyOptions}>
                                 <span onClick={() => setMonday(!Monday)} className={Monday ? styles.singledayselected : styles.singleday}>M</span>

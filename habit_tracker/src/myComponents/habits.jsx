@@ -1,15 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react';
 import styles from './Habits.module.css';
 import leftarrow from '../pages/icons/reshot-icon-chevron-arrow-left-circle-XY6MSRE5DN.svg';
 import rightarrow from '../pages/icons/reshot-icon-chevron-arrow-right-circle-C23LFHP5TK.svg';
 import { AuthContext } from '../component/AuthContext';
-import { useContext } from 'react';
 import axios from 'axios';
 
 function Habits() {
     const todaydate = new Date();
     const [middledate, setmiddledate] = useState(todaydate);
     const [selecteddate, setselecteddate] = useState(todaydate);
+    const [menuVisible, setMenuVisible] = useState(null); // State for menu visibility
 
     const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
     const { token } = useContext(AuthContext);
@@ -39,6 +39,7 @@ function Habits() {
         newDate.setDate(newDate.getDate() - 1);
         setmiddledate(newDate);
     };
+
     const getclass = (offset) => {
         const newDate = new Date(middledate);
         newDate.setDate(middledate.getDate() + offset);
@@ -48,26 +49,24 @@ function Habits() {
             return styles.selectedday;
         }
         else return styles.day;
+    };
 
-    }
     const handleDateClick = (offset) => {
         const newDate = new Date(middledate);
         newDate.setDate(middledate.getDate() + offset);
         setselecteddate(newDate);
-    }
-    //habit list
+    };
 
     const habitList = [
-        { name: "Go for a run", discription: "Health", checked: false },
-        { name: "Read a book", discription: "Leisure", checked: true },
-        { name: "Eat a healthy meal", discription: "Health", checked: false },
-        { name: "hello", discription: "sport", checked: true },
-        { name: "Go for a run", discription: "Health", checked: false },
-        { name: "Read a book", discription: "Leisure", checked: true },
-        { name: "Eat a healthy meal", discription: "Health", checked: false },
-        { name: "hello", discription: "sport", checked: true },
-    ]
-
+        { name: "Go for a run", description: "Health", checked: false },
+        { name: "Read a book", description: "Leisure", checked: true },
+        { name: "Eat a healthy meal", description: "Health", checked: false },
+        { name: "hello", description: "sport", checked: true },
+        { name: "Go for a run", description: "Health", checked: false },
+        { name: "Read a book", description: "Leisure", checked: true },
+        { name: "Eat a healthy meal", description: "Health", checked: false },
+        { name: "hello", description: "sport", checked: true },
+    ];
 
     const changeColor = (event) => {
         if (event.target.checked) {
@@ -81,44 +80,66 @@ function Habits() {
         } else {
             event.target.parentElement.parentElement.style.color = "black";
         }
-    }
+    };
+
     const getclasss = (value) => {
         if (value) {
             return styles.truesingleList;
         }
         else return styles.singleList;
-    }
+    };
+
     const Token = token.token;
-    const headers ={
+
+    const headers = {
         'Content-Type': 'application/json',
         'Authorization': `token ${Token}`,
     };
-    axios.get('http://localhost:8000/api/habits/',{headers})
-      .then(response => {
-        console.log('Data fetched successfully:', response.data);
-      })
-      .catch(error => {
-        const errorMessage = Object.values(error.response.data)[0][0];
-        console.error('Error fetching data:', errorMessage);
-      });
+
+    axios.get('http://localhost:8000/api/habits/', { headers })
+        .then(response => {
+            console.log('Data fetched successfully:', response.data);
+        })
+        .catch(error => {
+            const errorMessage = Object.values(error.response.data)[0][0];
+            console.error('Error fetching data:', errorMessage);
+        });
 
     const handleCheckClick = () => {
-    }
-    const habitList2 = habitList.map((habit) => {
-        return <li>
+    };
+
+    const handleMenuClick = (index) => {
+        setMenuVisible(menuVisible === index ? null : index);
+    };
+
+    const handleDelete = (index) => {
+        console.log(`Delete habit at index ${index}`);
+        setMenuVisible(null);
+    };
+    console.log(Token);
+
+    const habitList2 = habitList.map((habit, index) => (
+        <li key={index}>
             <div className={styles.habit2}>
-                <div className={styles.checkBox} >
-                    <input type="checkbox" checked={habit.checked} className={styles.checkBoxInp} />
+                <div className={styles.checkBox}>
+                    <input type="checkbox" checked={habit.checked} className={styles.checkBoxInp} onChange={changeColor} />
                 </div>
                 <div className={getclasss(habit.checked)} onClick={handleCheckClick}>
                     <div className={styles.text}>
                         <h3>{habit.name}</h3>
-                        <h3 className={styles.categoryHabit}>{habit.discription}</h3>
+                        <h3 className={styles.categoryHabit}>{habit.description}</h3>
                     </div>
+                    <div className={styles.menuIcon} onClick={() => handleMenuClick(index)}>⋮</div>
+                    {menuVisible === index && (
+                        <div className={styles.menu}>
+                            <div className={styles.menuItem} onClick={() => handleDelete(index)}>Delete</div>
+                        </div>
+                    )}
                 </div>
             </div>
         </li>
-    });
+    ));
+
     const ProgressBar = ({ progress }) => {
         return (
             <div className={styles.bottomprogressbar}>
@@ -130,13 +151,14 @@ function Habits() {
     };
 
     return (
-        <div className={styles.main} >
+        <div className={styles.main}>
             <div className={styles.sideBarCalendar}>
                 <div className={styles.sometext}> Get caught up with your task</div>
                 <div className={styles.calendarDiv}>
                     <div><img src={leftarrow} alt="<-" className={styles.icon} onClick={handleleftarrowclick} /></div>
                     {[0, 1, 2, 3, 4, 5, 6].map((index) => (
                         <div
+                            key={index}
                             className={getclass(index - 3)}
                             onClick={() => handleDateClick(index - 3)}
                         >
