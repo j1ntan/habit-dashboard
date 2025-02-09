@@ -4,9 +4,9 @@ import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../component/AuthContext';
 import axios from 'axios';
 
-function Addahabit() {
+function Addahabit({ onClose }) {
     const [name, setname] = useState("");
-    const [recurring, setrecurring] = useState("Daily");
+    const [recurring, setrecurring] = useState("");
     const [type, settype] = useState('True');
     const [description, setDescription] = useState("");
     const [startDate, setstartDate] = useState('');
@@ -54,7 +54,8 @@ function Addahabit() {
         axios.post('http://localhost:8000/api/habits/create', addahabit, { headers })
             .then(response => {
                 console.log('Data posted successfully:', response.data);
-                navigate('/dashboard');
+                onClose();
+
             })
             .catch(error => {
                 const errorMessage = Object.values(error.response.data)[0][0];

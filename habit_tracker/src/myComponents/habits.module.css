@@ -8,7 +8,7 @@
     padding: 10px 20px;
     border-radius: 25px;
     width: 17em;
-    background-color: white;
+    background: rgba(178, 134, 253, 1);
     align-items: center;
     justify-content: space-between;
 }
@@ -23,8 +23,11 @@
     width: 17em;
     align-items: center;
     justify-content: space-between;
-    background-color: black;
+    background: rgba(30, 30, 30, 1);
     color: white;
+}
+.truesingleList:hover{
+    cursor:pointer;
 }
 
 .categoryHabit{
@@ -258,4 +261,26 @@
 
 .menuItem:hover {
     background: rgb(207, 55, 55 ,0.7);
+}
+.habitout{
+    display: flex;
+    align-items: center;
+    gap:10px;
+}
+.checkbox{
+    height: 100%;
+    width:100%;
+    display: flex;
+    align-items: center;
+    border-radius: 100px;
+    background-color: white;
+}
+.checkboxselected{
+    height: 100%;
+    width:100%;
+    display: flex;
+    align-items: center;
+    border-radius: 100px;
+    background-color:rgba(178, 240, 66, 1);
+
 }

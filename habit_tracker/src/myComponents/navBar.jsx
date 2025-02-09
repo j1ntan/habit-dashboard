@@ -83,7 +83,7 @@ function NavBar(input) {
         <div className={styles.logout}><CgProfile className={styles.logoutIcon} onClick={handleOpenProfile} /></div>
         <div className={styles.logout}><MdLogout onClick={handleLogout} className={styles.logoutIcon} /></div></div>
       <Modal show={showModal} onClose={handleCloseModal} >
-        <Addahabit />
+        <Addahabit onClose={handleCloseModal}/>
       </Modal>
       <Profile show={showprofile} onClose={handleCloseProfile}></Profile>
     </div>

@@ -4,16 +4,23 @@ import leftarrow from '../pages/icons/reshot-icon-chevron-arrow-left-circle-XY6M
 import rightarrow from '../pages/icons/reshot-icon-chevron-arrow-right-circle-C23LFHP5TK.svg';
 import { AuthContext } from '../component/AuthContext';
 import axios from 'axios';
+import { useEffect } from 'react';
+import tick from '../pages/icons/check.svg';
 
 function Habits() {
     const todaydate = new Date();
     const [middledate, setmiddledate] = useState(todaydate);
     const [selecteddate, setselecteddate] = useState(todaydate);
-    const [menuVisible, setMenuVisible] = useState(null); // State for menu visibility
+    const [menuVisible, setMenuVisible] = useState(null);
 
     const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
     const { token } = useContext(AuthContext);
-
+    const startonlydate = selecteddate.getDate() > 9 ? selecteddate.getDate() : `0${selecteddate.getDate()}`;
+    const startonlymonth = selecteddate.getMonth() + 1 > 9 ? selecteddate.getMonth() + 1 : `0${selecteddate.getMonth() + 1}`;
+    const endonlydate = selecteddate.getDate() > 9 ? selecteddate.getDate() : `0${selecteddate.getDate()}`;
+    const endonlymonth = selecteddate.getMonth() + 1 > 9 ? selecteddate.getMonth() + 1 : `0${selecteddate.getMonth() + 1}`;
+    const startDate = `${selecteddate.getFullYear()}-${startonlymonth}-${startonlydate}`;
+    const endDate = `${selecteddate.getFullYear()}-${endonlymonth}-${endonlydate}`;
     function getDate(offset) {
         const newDate = new Date(middledate);
         newDate.setDate(middledate.getDate() + offset);
@@ -57,16 +64,7 @@ function Habits() {
         setselecteddate(newDate);
     };
 
-    const habitList = [
-        { name: "Go for a run", description: "Health", checked: false },
-        { name: "Read a book", description: "Leisure", checked: true },
-        { name: "Eat a healthy meal", description: "Health", checked: false },
-        { name: "hello", description: "sport", checked: true },
-        { name: "Go for a run", description: "Health", checked: false },
-        { name: "Read a book", description: "Leisure", checked: true },
-        { name: "Eat a healthy meal", description: "Health", checked: false },
-        { name: "hello", description: "sport", checked: true },
-    ];
+    const [habitList, sethabitList] = useState([]);
 
     const changeColor = (event) => {
         if (event.target.checked) {
@@ -95,18 +93,60 @@ function Habits() {
         'Content-Type': 'application/json',
         'Authorization': `token ${Token}`,
     };
-
-    axios.get('http://localhost:8000/api/habits/', { headers })
-        .then(response => {
-            console.log('Data fetched successfully:', response.data);
-        })
-        .catch(error => {
-            const errorMessage = Object.values(error.response.data)[0][0];
-            console.error('Error fetching data:', errorMessage);
-        });
-
-    const handleCheckClick = () => {
+    const body = {
+        start_date: startDate,
+        end_date: startDate,
     };
+    console.log(headers);
+    console.log(body);
+    useEffect(() => {
+        axios.post('http://localhost:8000/api/habits/calendar', body, { headers })
+            .then(response => {
+                console.log('Data fetched successfully:', response.data.data[0].habits);
+                sethabitList(response.data.data[0].habits);
+            })
+            .catch(error => {
+                const errorMessage = Object.values(error.response.data);
+                console.error('Error fetching data:', errorMessage);
+            });
+    }, [selecteddate, startDate, Token,]);
+
+
+    const handleCheckClick = (index) => {
+        // const bodycheck = {
+        //     date: startDate,
+        //     completed: !habitList[index].completed,
+        // }
+        // const url = `http://localhost:8000/api/habits/${habitList[index].habit_id}/track`;
+        // axios.post(url, { headers })
+        //     .then(response => {
+        //         console.log('Data posted successfully:', response.data);
+        //     })
+        //     .catch(error => {
+        //         const errorMessage = Object.values(error.response.data);
+        //         console.error('Error posting data', errorMessage);
+        //     });
+        fetch(`http://localhost:8000/api/habits/${habitList[index].habit_id}/track`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `token ${Token}`,
+            },
+            body: JSON.stringify({
+                date: startDate,
+                completed: !habitList[index].completed,
+            }),
+
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Data posted successfully:', data);
+            })
+            .catch(error => {
+                console.error('Error posting data:', error);
+            });
+    };
+
 
     const handleMenuClick = (index) => {
         setMenuVisible(menuVisible === index ? null : index);
@@ -121,13 +161,13 @@ function Habits() {
     const habitList2 = habitList.map((habit, index) => (
         <li key={index}>
             <div className={styles.habit2}>
-                <div className={styles.checkBox}>
-                    <input type="checkbox" checked={habit.checked} className={styles.checkBoxInp} onChange={changeColor} />
-                </div>
-                <div className={getclasss(habit.checked)} onClick={handleCheckClick}>
-                    <div className={styles.text}>
-                        <h3>{habit.name}</h3>
-                        <h3 className={styles.categoryHabit}>{habit.description}</h3>
+                <div className={getclasss(habit.completed)} onClick={() => handleCheckClick(index)}>
+                    <div className={styles.habitout}>
+                        <div className={styles.checkbox}><img src={tick} alt="." ></img></div>
+                        <div className={styles.text}>
+                            <h3>{habit.habit_name}</h3>
+                            <h3 className={styles.categoryHabit}>{habit.goal}</h3>
+                        </div>
                     </div>
                     <div className={styles.menuIcon} onClick={() => handleMenuClick(index)}>⋮</div>
                     {menuVisible === index && (
@@ -183,4 +223,4 @@ function Habits() {
     );
 }
 
-export default Habits;
+export default Habits
