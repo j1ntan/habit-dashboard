@@ -1,4 +1,5 @@
 import React from "react";
+import { useContext } from "react";
 import styles from './analytics.module.css'
 import HabitGraph from '../MyComponents/habitGraph.jsx'
 import ProgressBar from '../MyComponents/progressBar.jsx'
