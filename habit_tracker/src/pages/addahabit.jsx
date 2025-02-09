@@ -1,8 +1,7 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import styles from './addahabit.module.css';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../component/AuthContext';
-import { useContext } from 'react';
 import axios from 'axios';
 
 function Addahabit() {
@@ -25,18 +24,17 @@ function Addahabit() {
     const [Sunday, setSunday] = useState(false);
     const { token } = useContext(AuthContext);
 
-
     const Days = [Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday];
-    const dayinnumber = []
+    const dayinnumber = [];
 
-    for (let i = 1; i <= 7; i++) {
+    for (let i = 0; i < 7; i++) {
         if (Days[i]) {
-            dayinnumber.push(i);
+            dayinnumber.push(i + 1);
         }
     }
 
     const navigate = useNavigate();
-    const Token=token.token;
+    const Token = token.token;
 
     const handleAddClick = (e) => {
         e.preventDefault();
@@ -48,7 +46,7 @@ function Addahabit() {
             good_habit: type,
             goal: goal,
             days: dayinnumber,
-        }
+        };
         const headers = {
             'Content-Type': 'application/json',
             'Authorization': `token ${Token}`,
@@ -56,20 +54,39 @@ function Addahabit() {
         axios.post('http://localhost:8000/api/habits/create', addahabit, { headers })
             .then(response => {
                 console.log('Data posted successfully:', response.data);
+                navigate('/dashboard');
             })
             .catch(error => {
                 const errorMessage = Object.values(error.response.data)[0][0];
-                console.error('Error posting data:', error);
+                console.error('Error posting data:', errorMessage);
                 setError(error.response.data.error);
             });
-    }
-    const handleCancelClick = (e) => {
-        navigate('/dashboard');
-    }
-    console.log(Token)
+    };
+
+    const handleRecurringClick = (type) => {
+        setrecurring(type);
+        if (type === "Daily") {
+            setMonday(true);
+            setTuesday(true);
+            setWednesday(true);
+            setThursday(true);
+            setFriday(true);
+            setSaturday(true);
+            setSunday(true);
+        } else {
+            setMonday(false);
+            setTuesday(false);
+            setWednesday(false);
+            setThursday(false);
+            setFriday(false);
+            setSaturday(false);
+            setSunday(false);
+        }
+    };
+
     return (
-        <div>
-            <h1 className={styles.addahabit}>Add a habit</h1>
+        <div className={styles.container}>
+            <div className={styles.tmp}><h1 className={styles.addahabit}>Add a habit</h1></div>
             <form onSubmit={handleAddClick} className={styles.form}>
                 <div className={styles.name}>
                     <input type="text" placeholder="Name of Habit" value={name} onChange={(e) => setname(e.target.value)} className={styles.inputname} />
@@ -87,7 +104,7 @@ function Addahabit() {
                 <div className={styles.quantitative}>
                     <span>
                         <input type="checkbox" id="Quantitative" name="category" checked={quantitativeCheck} onChange={(e) => setquantitativeCheck(e.target.checked)} />
-                        <label htmlFor="Quantitative">Goal</label>
+                        <label htmlFor="Quantitative">Set Goal</label>
                     </span>
                     {quantitativeCheck &&
                         <div className={styles.quantityBox}>
@@ -98,28 +115,30 @@ function Addahabit() {
                 <div className={styles.repeatContainer}>
                     <div className={styles.repeatLabel}> Repeat : </div>
                     <div className={styles.repeatOptions}>
-                        <span onClick={() => setrecurring("Daily")} className={recurring === "Daily" ? styles.active : styles.daily}>Daily </span>
-                        | <span onClick={() => setrecurring("Weekly")} className={recurring === "Weekly" ? styles.active : styles.weekly}>Weekly </span>
+                        <span onClick={() => handleRecurringClick("Daily")} className={recurring === "Daily" ? styles.active : styles.daily}>Daily </span>
+                        | <span onClick={() => handleRecurringClick("Weekly")} className={recurring === "Weekly" ? styles.active : styles.weekly}>Weekly </span>
+                    </div>
+                    <div className={styles.dayscontainer}>
                         {recurring === "Weekly" && (
                             <div className={styles.weeklyOptions}>
-                                <span onClick={() => setMonday(!Monday)} className={Monday ? styles.activeDay : ''}>M</span>
-                                <span onClick={() => setTuesday(!Tuesday)} className={Tuesday ? styles.activeDay : ''}>T</span>
-                                <span onClick={() => setWednesday(!Wednesday)} className={Wednesday ? styles.activeDay : ''}>W</span>
-                                <span onClick={() => setThursday(!Thursday)} className={Thursday ? styles.activeDay : ''}>T</span>
-                                <span onClick={() => setFriday(!Friday)} className={Friday ? styles.activeDay : ''}>F</span>
-                                <span onClick={() => setSaturday(!Saturday)} className={Saturday ? styles.activeDay : ''}>S</span>
-                                <span onClick={() => setSunday(!Sunday)} className={Sunday ? styles.activeDay : ''}>S</span>
+                                <span onClick={() => setMonday(!Monday)} className={Monday ? styles.singledayselected : styles.singleday}>M</span>
+                                <span onClick={() => setTuesday(!Tuesday)} className={Tuesday ? styles.singledayselected : styles.singleday}>T</span>
+                                <span onClick={() => setWednesday(!Wednesday)} className={Wednesday ? styles.singledayselected : styles.singleday}>W</span>
+                                <span onClick={() => setThursday(!Thursday)} className={Thursday ? styles.singledayselected : styles.singleday}>T</span>
+                                <span onClick={() => setFriday(!Friday)} className={Friday ? styles.singledayselected : styles.singleday}>F</span>
+                                <span onClick={() => setSaturday(!Saturday)} className={Saturday ? styles.singledayselected : styles.singleday}>S</span>
+                                <span onClick={() => setSunday(!Sunday)} className={Sunday ? styles.singledayselected : styles.singleday}>S</span>
                             </div>
                         )}
                     </div>
                 </div>
                 <div className={styles.discription}>
                     <span> Discription</span>
-                    <textarea
+                    <div className={styles.scroll}><textarea
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
                         className={styles.descriptionBox}
-                    />
+                    /></div>
                 </div>
                 <div className={styles.dates}>
                     <span> <span> Start Date : <br /></span><input type="date" value={startDate} className={styles.inputdate} onChange={(e) => setstartDate(e.target.value)} /></span>

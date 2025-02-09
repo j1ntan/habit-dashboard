@@ -3,7 +3,6 @@ import styles from './Dashboard.module.css';
 import Navbar from '../MyComponents/navBar.jsx';
 import Profile from './profile.jsx';
 import Habits from '../myComponents/habits.jsx';
-import SideCalendar from '../MyComponents/sideCalendar.jsx';
 import { FaBeer } from "react-icons/fa";
 import { GrFormPrevious } from "react-icons/gr";
 import { GrFormNext } from "react-icons/gr";
@@ -63,7 +62,6 @@ function Dashboard() {
                         </div>
                     </div>
                     {/* right above bar- end */}
-
                     <div className={styles.rightBottomMain}>
                         {/* this code below is for analysis of week. */}
                             <Week />

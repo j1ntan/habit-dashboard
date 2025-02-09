@@ -8,17 +8,7 @@
     justify-content: center;
 }
 
-.addahabit {
-    background-color: #aa7cfb;
-    padding-top: 5px;
-    padding-bottom: 5px;
 
-    font-weight: 400;
-    text-align: center;
-    width: 70%;
-    border-radius: 24px;
-    color: white;
-}
 
 .form {
     justify-self: center;
@@ -80,9 +70,16 @@
     height: 40px;
     overflow: auto;
     resize: none;
-    padding: 10px;
-    border-style: none;
+    padding:5px;
+    border: none;
     border-radius: 24px;
+}
+.descriptionBox:focus {
+    outline: none;
+    border: none;
+}
+.descriptionBox:active{
+    border: none;
 }
 
 .type {
@@ -102,12 +99,13 @@
     margin: 5px;
     padding: 5px;
     flex-direction: row;
-    width: 350px;
+    width: 407px;
     color:black;
 }
 
 .repeatLabel {
     margin-right: 10px;
+    color:white;
 }
 
 .repeatOptions {
@@ -117,7 +115,6 @@
     background-color: white;
     border-radius: 24px;
     padding: 5px;
-    width: 65%;
     margin-top: 5px;
     margin-bottom: 5px;
 }
@@ -248,4 +245,62 @@
 }
 .descriptionBox::-webkit-scrollbar-thumb:hover {
     background: #747373;
+}
+.styles.container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.addahabit {
+    background-color: #aa7cfb;
+    font-weight: 400;
+    text-align: center;
+    padding: 7px;
+    border-radius: 24px;
+    color: white;
+    width: 200px;
+}
+.tmp{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width:100%;
+}
+.dayscontainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    margin-left: 12px;
+}
+.weeklyOptions{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    gap:2px;
+    padding : 5px;
+    border-radius: 24px;
+    
+}
+.singleday{
+    padding:3px;
+    width:15px;
+    text-align: center;
+    cursor: pointer;
+}
+.singledayselected{
+    padding:3px;
+    background-color: #ec5029;
+    border-radius: 24px;
+    color: white;
+    width:15px;
+    text-align: center;
+    cursor: pointer;
+}
+.scroll{
+    padding:10px;
+    background-color: white;
+    border-radius: 20px;
 }

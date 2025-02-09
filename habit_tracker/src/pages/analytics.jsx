@@ -1,6 +1,5 @@
 import React from "react";
 import styles from './analytics.module.css'
-import Navbar from '../navBar.jsx';
 import HabitGraph from '../MyComponents/habitGraph.jsx'
 import ProgressBar from '../MyComponents/progressBar.jsx'
 import CurrentStreak from "../MyComponents/currentStreak.jsx";
