@@ -1,5 +1,7 @@
 import React, {useState} from "react";
 import styles from '../MyComponents/listHabits.module.css';
+import { MdOutlineDelete } from "react-icons/md";
+
 
 const habitList = [
     { name: "Go for a run", discription: "Health", checked: false, time: "weekly" },
@@ -15,7 +17,7 @@ const habitList = [
 
 
 const habitList2 = habitList.map((habit) => {
-    return <li>
+    return <li className={styles.listMain}>
         <div className={styles.text}>
             <div className={styles.headHabit}>
                 <h3 className={styles.name}>{habit.name}</h3>
@@ -23,6 +25,7 @@ const habitList2 = habitList.map((habit) => {
                     {habit.time === "weekly" ? "weekly" : "daily"}
                 </h2>
             </div>
+            
             <div className={styles.text2}>
                 <h3 className={styles.categoryHabit}>{habit.discription}</h3>
                 <div>
@@ -40,6 +43,7 @@ const habitList2 = habitList.map((habit) => {
                 </div>
             </div>
         </div>
+        <div className={styles.delete}><MdOutlineDelete className={styles.icon}/></div>
     </li>
 });
 

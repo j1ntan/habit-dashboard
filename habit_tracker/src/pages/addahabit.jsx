@@ -53,7 +53,7 @@ function Addahabit() {
         };
         axios.post('http://localhost:8000/api/habits/create', addahabit, { headers })
             .then(response => {
-                console.log('Data posted successfully:', response.data);
+                console.log('Data post successfully:', response.data);
                 navigate('/dashboard');
             })
             .catch(error => {

@@ -12,9 +12,16 @@
     overflow: hidden;
     overflow-y: scroll;
 }
+
+.navbar{
+    background-color: #f1f1f1;
+    height: 45px;
+}
+
+/* seee heree..... */
 .mainContent{
     display: flex;
-    height:34em;
+    height:100vh;
     margin: 20px 20px;
     background-color: black;
     

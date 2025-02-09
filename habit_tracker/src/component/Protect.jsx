@@ -6,7 +6,7 @@ const ProtectedRoute = ({ element}) => {
     const { token } = useContext(AuthContext);
 
     return (
-            token ? element : <Navigate to="/login" />
+             element
     );
 };
 
