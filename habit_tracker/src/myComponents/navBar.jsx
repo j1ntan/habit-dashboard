@@ -38,6 +38,7 @@ function NavBar(input) {
 
   const handleCloseModal = () => {
     setShowModal(false);
+    window.location.reload();
   };
   const setClassdash = () => {
     if (input.input === "dashboard") {
@@ -70,7 +71,8 @@ function NavBar(input) {
 
 
   return (
-    <div className={styles.main}>
+    
+    <nav className={styles.main}>
       <div className={styles.logo}><img src={logo} alt="*logo*" className={styles.logo1}></img><span className={styles.webname}>Habit.</span></div>
       <div className={styles.middleboxstyle}>
         <div className={styles.toggle}>
@@ -86,7 +88,7 @@ function NavBar(input) {
         <Addahabit onClose={handleCloseModal}/>
       </Modal>
       <Profile show={showprofile} onClose={handleCloseProfile}></Profile>
-    </div>
+    </nav>
   )
 }
 

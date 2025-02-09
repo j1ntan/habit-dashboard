@@ -55,7 +55,6 @@ function Addahabit({ onClose }) {
             .then(response => {
                 console.log('Data posted successfully:', response.data);
                 onClose();
-
             })
             .catch(error => {
                 const errorMessage = Object.values(error.response.data)[0][0];

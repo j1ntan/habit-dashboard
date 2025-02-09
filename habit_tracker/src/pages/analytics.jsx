@@ -1,4 +1,5 @@
 import React from "react";
+import { useContext } from "react";
 import styles from './analytics.module.css'
 import HabitGraph from '../MyComponents/habitGraph.jsx'
 import ProgressBar from '../MyComponents/progressBar.jsx'
@@ -6,11 +7,33 @@ import CurrentStreak from "../MyComponents/currentStreak.jsx";
 import PerfectDays from "../MyComponents/perfectDays.jsx";
 import ListHabits from "../MyComponents/listHabits.jsx";
 import NavBar from "../MyComponents/navBar.jsx";
+import { AuthContext } from '../component/AuthContext';
+import axios from 'axios';
 
 function Analytics(){
+
+    const { token } = useContext(AuthContext);
+    const Token = token.token;
+    const headers = {
+        'Content-Type': 'application/json',
+        'Authorization': `token ${Token}`,
+    };
+
+    axios.get('http://localhost:8000/api/habits/analytics', { headers })
+            .then(response => {
+                console.log('Data retrieved successfully:', response.data);
+                navigate('/analytics');
+            })
+            .catch(error => {
+                const errorMessage = Object.values(error.response.data)[0][0];
+                console.error('Error retrieving data:', errorMessage);
+                setError(error.response.data.error);
+            });
+
+
     return(
         <div className={styles.body}>
-            <div className={styles.navbaar}>
+            <div className={styles.navbar}>
                 <NavBar input="analytics"/>
             </div>
 

@@ -113,8 +113,17 @@
     border-radius: 5px;
     text-align:center;
     vertical-align: middle;
-
+    background-color: rgba(178, 240, 66, 1);
 }
+.tabledataselected{
+    height: 30px;
+    width: 30px;
+    border-radius: 5px;
+    text-align:center;
+    vertical-align: middle;
+    background-color: rgba(217, 217, 217, 1);
+}
+
 .name{
     font-size: 20px;
     overflow: hidden;

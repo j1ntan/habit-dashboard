@@ -13,6 +13,31 @@
     margin-top: 5px;
 }
 
+.delete{
+    margin-right: -10px;
+    margin-left: 3px;
+    height: 50px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon{
+    cursor: pointer;
+    color: white;
+    width: 30px;
+    height: 30px;
+}
+
+.icon:hover{
+    color: rgb(171, 169, 169);
+}
+
+.listMain{
+    display: flex;
+}
+
 .list{
     display: flex;
     margin-top: 10px;
@@ -54,7 +79,7 @@
 
 .text{
     background-color: white;
-    width: 100%;
+    width: 95%;
     align-items: center;
     height: 50px;
     margin-bottom: 30px;

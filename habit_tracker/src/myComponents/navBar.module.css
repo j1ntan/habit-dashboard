@@ -1,10 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+
 .main{
     color: white;
     display: flex;
     justify-content: space-between;
     width: 100%;
-    background-color: black;
     height: 50px;
+    background-color: black;
     margin-top: 10px;
     margin-bottom: 10px;
 }
