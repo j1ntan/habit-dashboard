@@ -1,0 +1,176 @@
+body {
+    font-family: 'poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-color: Black;
+}
+.divmain{
+    width:100%;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    min-width:800px;
+    min-height:600px;
+    background-color: black;
+}
+.topbar {
+    height:50px;
+    width:100%;
+    min-height:30px;
+}
+.addaHabit{
+    display: flex;
+    justify-content: space-between;
+    width:100%;
+    height:5%;
+    max-height:40px;
+    min-height:30px;
+    display:flex;
+    align-items: center;
+}
+.mainContent{
+    display: flex;
+    width:100%;
+    flex: 1;
+    margin-top:10px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+.sideBar{
+    min-width:320px;
+    max-width:400px;
+    width:28%;
+    height:91%;
+    display:flex;
+    flex-direction: column;
+    margin:20px;
+    margin-top:40px;
+    margin-left:30px;
+}
+.rightDiv{
+    display:flex;
+    flex-direction: column;
+    height:95%;
+    flex : 1;
+    margin:10px;
+    margin-top: 25px;
+    margin-right:0px;
+    width:100%;
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+.rightDiv::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.rightDiv {
+    scrollbar-width: none; /* Firefox */
+}
+
+/* Hide scrollbar for IE, Edge */
+.rightDiv {
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.rightTopBar{
+    width: 900px;
+    height: 18%;
+    display: flex;
+    margin:15px;
+}
+.rightBottomMain{
+    width:900px;
+    height: 78%;
+    border-radius:10px;
+    display:flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 1);
+    margin:15px;
+}
+.username{
+    color: white;
+    font-size:28px;
+    margin-left: 35px;
+}
+.date{
+    box-sizing: border-box;
+    border-radius: 12px;
+    width:30%;
+    height:100%;
+    padding:5px;
+    color : white;
+}
+
+.streak{
+    box-sizing: border-box;
+    background-color: rgba(217, 217, 217, 1);
+    border-radius: 12px;
+    width:70%;
+    height:100%;
+    padding:5px;
+}
+
+
+
+.date h1{
+    font-size: 3em;
+}
+
+.date h2{
+    font-size: 2.2em;
+}
+
+
+
+.ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(10, 10, 10);
+    border-radius: 12px;
+}
+
+
+
+
+.header{
+    display: flex;
+    width: 100%;
+    height: 70px;
+    border-radius: 12px;
+}
+
+.headerLeft{
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+    height: 70px;
+    border-radius: 12px;
+}
+
+.headerRight{
+    width: 55%;
+    margin-left: 20px;
+    height: 70px;
+    border-radius: 12px;
+    background-color: rgb(151, 149, 149);
+}
+.iconPre{
+    margin-top: 1.1em;
+    width: 2em;
+    height: 2em;
+}
+
+.iconNex{
+    margin-top: 1.1em;
+    width: 2em;
+    height: 2em;
+}
+
+.weeklyDate{
+    margin-top: 0.7em;
+}

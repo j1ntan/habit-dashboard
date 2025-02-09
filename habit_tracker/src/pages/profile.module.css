@@ -1,0 +1,66 @@
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.profileButton {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.dropdownMenu {
+  display: block;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.textcontainer {
+  font-weight: 600;
+  padding: 8px 16px;
+  text-decoration: none;
+  display: block;
+  color: #333;
+}
+
+.textcontainer:hover {
+  background-color: #f1f1f1;
+}
+.profileContainer {
+  position: absolute;
+  top:50px;
+  right: 60px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color:black;
+}
+
+.profile{
+  display: flex;
+  padding-left: 14px;
+  justify-content: start;
+  align-items: center
+}
+
+.icon{
+  width:30px;
+  height: 30px;
+}
+

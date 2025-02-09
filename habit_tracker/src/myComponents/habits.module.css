@@ -1,0 +1,281 @@
+.h1{
+    color: white;
+}
+
+.singleList{
+    display: flex;
+    margin:3px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    width: 17em;
+    background: rgba(178, 134, 253, 1);
+    align-items: center;
+    justify-content: space-between;
+}
+.truesingleList{
+    display: flex;
+    margin:3px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    width: 17em;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(30, 30, 30, 1);
+    color: white;
+}
+
+.categoryHabit{
+    color: rgba(217, 217, 217, 1);
+    font-weight: 700;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.habit2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px;
+    position: relative;
+    padding-left: 1px;
+}
+
+.iconDiv{
+    background-color: rgb(183, 187, 187);
+    display: flex;
+    margin-top: 10px;
+    margin-right: 12px;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 16px;
+}
+.icon{
+    width: 30px;
+}
+.checkBox{
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.checkBoxInp{
+    width: 15px;
+    height: 15px;
+    border: 1.7px solid black;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.habitlistbox{
+    display:flex;
+    flex:1;
+    flex-direction:column;
+}
+.allhabitlistbox{
+    height:420px;
+    overflow-y: scroll;
+    box-sizing: border-box;
+    width: 100%;
+}
+.allhabitlistbox::-webkit-scrollbar {
+    width: 12px;
+}
+.allhabitlistbox::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 10px; 
+}
+.allhabitlistbox::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px; 
+}
+.allhabitlistbox::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+.bottomprogressbar{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 5px;
+}
+.progresscontainer {
+    display:flex;
+    align-items: center;
+    justify-content: left;
+    box-sizing: border-box;
+    margin: 5px;
+    background-color: white;
+    width:100%;
+    height: 16px;
+    border-radius: 8px;
+    padding: 2px;
+
+}
+
+.progressbar {
+    background-color: rgba(178, 240, 66, 1);
+    height:14px;
+    border-radius :7px;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(43, 43, 43, 1);
+    border-radius:20px;
+
+}
+.sideBarCalendar{
+    width: 100%;
+    height: 90px;
+    color:white;
+}
+.sideBarHabit{
+    box-sizing: border-box;
+    display:flex;
+    flex-direction: column;
+    width:100%;
+    padding:5px;
+    height:83%;
+    justify-content: space-between;
+}
+.calendarDiv{
+    box-sizing: border-box;
+    width: 100%;
+    height:100px;
+    padding:5px;
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+}
+.day{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 3px;
+    width: 28px;
+    height: 60px;
+    border-radius: 15px;
+    background-color: none;
+}
+.day:hover{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align:center;
+    align-items: stretch;
+    padding: 3px;
+    width: 30px;
+    height: 60px;
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255,0.5);
+}
+.selectedday{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align:center;
+    align-items: stretch;
+    padding: 3px;
+    width: 30px;
+    height: 60px;
+    border-radius: 15px;
+    background-color: rgba(178, 240, 66, 1);
+}
+
+.dayWeek{
+    font-size: 15px;
+    padding-bottom: 10px;
+    font-weight: 700;
+}
+
+.dateWeek{
+    font-size: 25px;
+    font-weight: 500;
+}
+.icon{
+    background-color: white;
+    border-radius: 100px;
+}
+.icon:hover{
+    background-color:rgb(180, 176, 176);
+    border-radius: 100px;
+}
+.icon:active{
+    background-color: rgb(145, 145, 145);
+    border-radius: 20px;
+}
+.sometext{
+    box-sizing: border-box;
+    width:100%;
+    height:30px;
+    color: white;
+    font-size: 20px;
+    margin-left: 10px;
+    padding:5px;
+    padding-bottom: 0px;
+}
+@media screen and (min-height: 750px){
+    .allhabitlistbox{
+        height:520px;
+        overflow-y: scroll;
+        box-sizing: border-box;
+        width: 100%;
+    }
+}
+.menuIcon {
+    cursor: pointer;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.menu {
+    position: absolute;
+    top: -5px;
+    right: 2px;
+    
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 1000;
+    color:black;
+}
+
+.menuItem {
+    padding:3px;
+    cursor: pointer;
+    background: rgb(207, 55, 55);
+    border-radius: 5px;
+}
+
+.menuItem:hover {
+    background: rgb(207, 55, 55 ,0.7);
+}
+.habitout{
+    display: flex;
+    align-items: center;
+    gap:10px;
+    cursor:pointer;
+}
+.checkbox{
+    height: 100%;
+    width:100%;
+    display: flex;
+    align-items: center;
+    border-radius: 100px;
+    background-color: white;
+}
+.checkboxselected{
+    height: 100%;
+    width:100%;
+    display: flex;
+    align-items: center;
+    border-radius: 100px;
+    background:rgba(178, 240, 66, 1);
+}

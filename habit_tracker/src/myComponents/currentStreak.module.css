@@ -1,0 +1,44 @@
+.main{
+    width:95%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.icon{
+    width: 30%;
+    height: 12vh;
+}
+
+.current{
+    margin-right: 20px;
+}
+
+.textCurrent{
+    display: flex;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 0.9em;
+}
+
+.textBest{
+    display: flex;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 0.9em;
+}
+
+.bestHead, .currentHead{
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+}
+
+
+.best{
+    margin-right: 20px;
+}
+
+.iconFire{
+    width: 95%;
+    height: 95%;
+}

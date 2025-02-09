@@ -1,0 +1,151 @@
+.main {
+    box-sizing: border-box;
+    padding:10px;
+    width:100%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.topbar {
+    display: flex;
+    width:98%;
+    padding:3px;
+    height:10%;
+}
+
+.weekdaterange {
+    margin: 3px;
+    padding: 3px;
+}
+
+.weekdate {
+    display: flex;
+    font-size: 25px;
+    align-items:center;
+    justify-content: space-evenly;
+    width:30%;
+    margin:2px;
+}
+
+.progresscontainer {
+    background-color: rgb(207, 207, 207);
+    width:100%;
+    height: 12px;
+    border-radius: 15px;
+    margin-top:5px;
+}
+
+.progressbar {
+    background-color:black;
+    height:12px;
+    border-radius :15px;
+}
+.progresstext {
+    
+}
+.progress{
+    display:flex;
+    flex-direction: column;
+    height:var(weekdate);
+    width:63%;
+    margin:2px;
+    margin-left:15px;
+    justify-content: center;
+    margin-right:15px;
+}
+.bottombar{
+    overflow-y: scroll;
+    width:95%;
+    height:450px;
+    margin:1%;
+    padding:1%;
+}
+.bottombar::-webkit-scrollbar {
+    width: 12px;
+}
+.bottombar::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 10px; 
+}
+.bottombar::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px; 
+}
+.bottombar::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.icon{
+
+}
+.hr{
+    width:96%;
+    align-self: center;
+}
+.actualdate{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.icons {
+    height: 20px;
+    width: 20px;
+    margin-top:4px;
+}
+
+.table {
+    border-collapse: separate;
+    border-spacing: 40px 15px;
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.divmain {
+    height:100%;
+    width:100%;
+}
+.tabledata{
+    height: 30px;
+    width: 30px;
+    border-radius: 5px;
+    text-align:center;
+    vertical-align: middle;
+    background-color: rgba(178, 240, 66, 1);
+}
+.tabledataselected{
+    height: 30px;
+    width: 30px;
+    border-radius: 5px;
+    text-align:center;
+    vertical-align: middle;
+    background-color: rgba(217, 217, 217, 1);
+}
+
+.name{
+    font-size: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width:10%;
+}
+.row{
+    height:30px;
+}
+.day{
+    height:32px;
+    width:32px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+@media screen and (max-width: 1000px){
+    .table {
+        border-collapse: separate;
+        border-spacing: 30px 15px;
+        display: flex;
+        width: 100%;
+        height: 100%;
+    }
+}

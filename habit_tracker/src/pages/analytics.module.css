@@ -1,0 +1,98 @@
+.body{
+    background-color: black;
+    width: 100wh;
+    height: 100vh;
+}
+
+.rightDiv{
+    background-color: rgba(43, 43, 43, 1);
+    width: 25.8%;
+    border-radius: 30px;
+    margin-left: 12px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.navbar{
+    background-color: #f1f1f1;
+    height: 45px;
+}
+
+/* seee heree..... */
+.mainContent{
+    display: flex;
+    height:100vh;
+    margin: 20px 20px;
+    background-color: black;
+    
+    
+}
+
+.leftDiv{
+    margin-right: 10px;
+    background-color: black;
+    width: 73%;
+}
+
+.leftUpper{
+    display: flex;
+    background-color: black;
+    width: 100%;
+    margin-bottom: 20px;
+    height:45% ;
+}
+
+.leftPart{
+    background-color: black;
+    width: 38%;
+    margin-right: 25px;
+    height: 100%;
+}
+
+.perfectDays{
+    background-color: rgba(178, 134, 253, 1);
+    width: 100%;
+    height: 52%;
+    margin-bottom: 20px;
+    border-radius: 30px;
+}
+
+.streak{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(229, 87, 51, 1);
+    width: 100%;
+    height: 40%;
+    border-radius: 30px;
+}
+
+.rightPart{
+    background-color: rgba(178, 240, 66, 1);
+    height: 100%;
+    width: 60%;
+    border-radius: 30px;
+
+}
+.leftBottom{
+    background-color: white;
+    width: 100%;
+    height:50% ;
+    border-radius: 30px;
+}
+
+.rightDiv::-webkit-scrollbar {
+    width: 12px;
+}
+.rightDiv::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 10px; 
+}
+.rightDiv::-webkit-scrollbar-thumb {
+    background: #919090;
+    border-radius: 10px; 
+}
+.rightDiv::-webkit-scrollbar-thumb:hover {
+    background: #747373;
+}
+

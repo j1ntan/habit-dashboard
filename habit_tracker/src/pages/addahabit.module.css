@@ -1,0 +1,306 @@
+.main{
+    color: white;
+    background-color: #2B2B2B;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.form {
+    justify-self: center;
+    width: 400px;
+    height:auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #2B2B2B;
+    border-radius: 24px;
+}
+
+.name {
+    width: 380px;
+    margin: 10px;
+}
+
+.inputname {
+    font-size: 17px;
+    
+    width: 270px;
+    height: 25px;
+    border-radius: 24px;
+    border-style: none;
+    padding: 5px;
+}
+
+.quantitative {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
+    gap: 10px;
+    align-items: center;
+    width: 380px;
+    height: 20px;
+}
+
+.quantityBox{
+    display: flex;   
+    align-items: center;
+
+}
+
+.inputQuantity {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    border-radius: 24px;
+    border-style: none;
+    height: 20px;
+    padding: 3px;
+    margin: 2px;
+}
+
+.descriptionBox {
+    width: 250px;
+    height: 40px;
+    overflow: auto;
+    resize: none;
+    padding:5px;
+    border: none;
+    border-radius: 24px;
+}
+.descriptionBox:focus {
+    outline: none;
+    border: none;
+}
+.descriptionBox:active{
+    border: none;
+}
+
+.type {
+    display: flex;
+    gap: 10px;
+    width: 200px;
+    margin: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+.repeatContainer {
+    color:white;
+    display: flex;
+    align-items: center;
+    margin: 5px;
+    padding: 5px;
+    flex-direction: row;
+    width: 407px;
+    color:black;
+}
+
+.repeatLabel {
+    margin-right: 10px;
+    color:white;
+}
+
+.repeatOptions {
+    color: black;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 24px;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.daily {
+    margin-left: 4px;
+    margin-right: 4px;
+    border-radius: 5px;
+    padding: 3px;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.weekly {
+    margin-left: 4px;
+    margin-right: 4px;
+    border-radius: 5px;
+    padding: 3px;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.monthly {
+    margin-left: 4px;
+    margin-right: 4px;
+    border-radius: 5px;
+    padding: 3px;
+    padding-left: 6px;
+    padding-right: 6px;   
+}
+
+.daily:hover {
+    background-color: #e96544;
+    cursor: pointer;
+}
+
+.weekly:hover {
+    background-color:#e96544;
+    cursor: pointer;
+}
+
+.monthly:hover {
+    background-color: #e96544;
+    cursor: pointer;
+}
+
+.active{
+    margin-left: 4px;
+    margin-right: 4px;
+    border-radius: 5px;
+    padding: 3px;
+    padding-left: 6px;
+    padding-right: 6px;
+    color: white;
+    background: #ec5029;
+}
+
+.active:hover{
+    cursor: pointer;   
+}
+
+.discription{
+    display: flex;
+    align-items: top;
+    margin: 5px;
+    padding: 5px;
+    gap: 10px;
+
+}
+
+.dates{
+    display: flex;
+    margin: 10px;
+    padding: 5px;
+    align-items: center;
+    justify-content: left;
+    gap: 10px;
+    width:380px;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+    justify-content: center;
+    padding: 5px;
+    gap: 10px;
+}
+
+.button{
+    height: 30px;
+    width: 60px;
+    border-radius: 5px;
+    background-color: #abf326;
+    margin: 5px;
+    padding: 5px;
+    border-style: none;
+}
+
+.button:hover{
+    background-color:rgb(180, 181, 184, 1);
+    cursor: pointer;
+}
+
+.button:active{
+    background-color: rgb(105, 105, 105);
+}
+.inputdate{
+    border-style: none;
+    border-radius: 5px;
+    margin: 2px;
+    padding: 2px;
+    font-size: 15px;
+    width: 120px;
+    height: 25px;
+}
+
+.descriptionBox::-webkit-scrollbar {
+    width: 5px;
+}
+.descriptionBox::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 10px; 
+}
+.descriptionBox::-webkit-scrollbar-thumb {
+    background: #919090;
+    border-radius: 10px; 
+}
+.descriptionBox::-webkit-scrollbar-thumb:hover {
+    background: #747373;
+}
+.styles.container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.addahabit {
+    background-color: #aa7cfb;
+    font-weight: 400;
+    text-align: center;
+    padding: 7px;
+    border-radius: 24px;
+    color: white;
+    width: 200px;
+}
+.tmp{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width:100%;
+}
+.dayscontainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    margin-left: 12px;
+}
+.weeklyOptions{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    gap:2px;
+    padding : 5px;
+    border-radius: 24px;
+    
+}
+.singleday{
+    padding:3px;
+    width:15px;
+    text-align: center;
+    cursor: pointer;
+}
+.singledayselected{
+    padding:3px;
+    background-color: #ec5029;
+    border-radius: 24px;
+    color: white;
+    width:15px;
+    text-align: center;
+    cursor: pointer;
+}
+.scroll{
+    padding:10px;
+    background-color: white;
+    border-radius: 20px;
+}
